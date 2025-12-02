@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: C++ in Kernel Development
+message: The NeKernel Paper.
+type: software
+authors:
+  - given-names: Amlal
+    family-names: El Mahrouss
+    email: aelmahrouss@acm.org
+identifiers:
+  - type: url
+    value: 'https://nekernel.org'
+    description: NeKernel's website.
+repository-code: 'https://github.com/nekernel-org/draft'
+url: 'https://nekernel.org'
+abstract: >-
+  This is The NeKernel Paper, authored by Amlal El Mahrouss.
+keywords:
+  - kernel
+  - cpp
+license: Apache-2.0

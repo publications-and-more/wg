@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\lstset { %
+    language=C++
+}
+
+\title{C++ for Kernel Development}
+\author{Amlal El Mahrouss\\NeKernel.org}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Abstract}
+{
+Many and most kernels have been shipped using the C programming language.\\
+And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel. \\
+That is the reason that most production-grade kernels (Linux, XNU, and NT) are mostly written in C. With a higher-level subset in C++. \\
+However, when correctly applying C++ principles to kernel development, one makes the development much more easier to pull off.
+}
+
+\section{Introduction}
+\subsection{Part One: The C++ Runtime}
+{
+The problem mostly lies in the C++ runtime. Which assumes an existing host. A host is the contrary of a freestanding target, that is a program which expects a runtime to be present and linked to the program. \\
+A C++ Kernel may instead make use of compile-time features of C++ alongside a tiny C++ runtime to make sure that no issues arise because of this host/freestanding difference.
+}
+
+\subsection{Part Two: Constexpr and Friends}
+{
+One may avoid v-tables and runtime dependent features as much as possible. \\
+While focusing instead on meta-programming and compile-time features offered by C++. For example one may use templates to implement a scheduling policy algorithm. \\
+One example of such implementation may be: \\
+
+(Keep in mind that the code has not been tested on production systems, use it at your own risk!)
+
+\begin{lstlisting}
+/// Reference Implementation: https://github.com
+/// /nekernel-org/nekernel/blob/stable/src/kernel/
+/// KernelKit/CoreProcessScheduler.h#L51-L76
+/// AND: https://github.com/nekernel-org/nekernel/blob/stable/src/kernel
+/// /KernelKit/CoreProcessScheduler.h#L78-L105
+
+struct FileTree final {
+    static constexpr bool is_virtual_memory = false;
+    static constexpr bool is_memory = false;
+    static constexpr bool is_file = true;
+    /// ...
+};
+
+struct MemoryTree final {
+    static constexpr bool is_virtual_memory = false;
+    static constexpr bool is_memory = true;
+    static constexpr bool is_file = false;
+    /// ...
+};
+\end{lstlisting}
+
+As you can see these two structure leverages the "constexpr" keyword to make sure that no bugs or panic occurs at runtime because of a misuse of a system resource. \\
+
+Which is why the constexpr keyword is very powerful here, we avoid the many pitfalls of writing (and hoping) that the C version will be well-thought enough so that we can catch such bugs later.
+
+\subsection{Bonus: Concept and the Device Driver Kit}
+{
+The following shows how powerful C++ can be when combining it with Device Driver development as well.
+
+\begin{lstlisting}
+/// Reference implementation: https://github.com/nekernel-org
+/// /nekernel/blob/stable/src/libDDK/DriverKit
+/// /c%2B%2B/driver_base.h
+/// @brief This concept requires the driver 
+/// to be IDriverBase compliant.
+
+template <typename T>
+concept IsValidDriver = requires(T a) {
+  { a.IsActive() && a.Type() > 0 };
+};
+
+/// @brief Consteval helper to detect
+/// whether a template is truly based on IDriverBase.
+/// @note This helper is consteval only.
+template<IsValidDriver T>
+consteval void ce_ddk_is_valid(T) {}
+\end{lstlisting}
+}
+}
+
+\subsection{Part Three: Memory and C++ Classes}
+{
+This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language dress a class lookup system (also called v-table) in order to refer to a base method in case if the instance has it missing.
+
+\begin{lstlisting}
+/// Link: https://godbolt.org/z/q3Wceannr
+/// /std:c++20 /Wall
+
+#include <iostream>
+
+class A
+{
+public:
+    explicit A() = default;
+    virtual ~A() = default;
+
+    virtual void doImpl() 
+    {
+        std::cout << "doImpl\n";
+    }
+};
+
+class B : public A
+{
+public:
+    explicit B() = default;
+    ~B() override = default;
+};
+
+int main() {
+    B* callImpl = new B();
+    callImpl->doImpl();
+}
+\end{lstlisting}
+
+\subsection{Addressing V-Tables in a C++ Kernel.}
+
+Now the problem with kernel development is that we want to avoid such feature as much as possible, and we'd do that by following the Prong on Inheritance:
+
+\subsection{The Three Prongs on Inheritance:}
+
+Consider the following questions:
+
+\begin{itemize}
+\item[A:] Is this a protocol/concept that can be extended to other similar protocols/concepts?
+\item[B:] Can I do this without too much trade-off costs?
+\item[C:] Can I do this without using V-Tables?
+\end{itemize}
+}
+
+When 2/3 of those questions fail, you should consider finding another solution to your problem, as it surely has an equivalent without V-Tables.
+
+\section{Final Words and Conclusion}
+{
+This is the end of this paper, which has finally come to an end after three parts. \\
+A reference implementation of this philosophy exists, it's called NeKernel.org, available under the same internet address. \\
+I am looking forward to any questions or inquiries at: amlal@nekernel.org \\\\Yours truly, \\
+Amlal El Mahrouss
+}
+
+\section{References}
+{
+\begin{itemize}
+    \item[EKA2:] https://en.wikipedia.org/wiki/EKA2
+    \item[NeKernel.org:] https://nekernel.org
+\end{itemize}
+}
+
+\end{document}
