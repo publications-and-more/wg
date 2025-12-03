@@ -6,7 +6,7 @@
     language=C++
 }
 
-\title{C++ for Kernel Development}
+\title{WG01: C++ for Kernel Development}
 \author{Amlal El Mahrouss\\NeKernel.org}
 \date{\today}
 
@@ -14,7 +14,7 @@
 
 \maketitle
 
-\subsection{Abstract}
+\section{Abstract}
 {
 Many and most kernels have been shipped using the C programming language.\\
 And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel. \\
@@ -22,7 +22,7 @@ That is the reason that most production-grade kernels (Linux, XNU, and NT) are m
 However, when correctly applying C++ principles to kernel development, one makes the development much more easier to pull off.
 }
 
-\section{Introduction}
+\section{The Three Principles of Kernel C++}
 \subsection{Part One: The C++ Runtime}
 {
 The problem mostly lies in the C++ runtime. Which assumes an existing host. A host is the contrary of a freestanding target, that is a program which expects a runtime to be present and linked to the program. \\
@@ -59,16 +59,21 @@ struct MemoryTree final {
 };
 \end{lstlisting}
 
-As you can see these two structure leverages the "constexpr" keyword to make sure that no bugs or panic occurs at runtime because of a misuse of a system resource. \\
+As you can see these two structure 
+leverages the `constexpr' keyword to make sure
+no bugs or panic occurs at runtime\\because of a misuse of a system resource. \\
 
 Which is why the constexpr keyword is very powerful here, we avoid the many pitfalls of writing (and hoping) that the C version will be well-thought enough so that we can catch such bugs later.
 
-\subsection{Bonus: Concept and the Device Driver Kit}
+\subsection{Bonus: Using Concepts and the DDK.}
 {
-The following shows how powerful C++ can be when combining it with Device Driver development as well.
+This bonus subsection intends to show how properly applied C++\\
+Can solve issues related to driver validation.
+The following example shows how powerful C++ can be when combining it with Device Driver development as well.
 
 \begin{lstlisting}
-/// Reference implementation: https://github.com/nekernel-org
+/// Reference implementation:
+/// https://github.com/nekernel-org
 /// /nekernel/blob/stable/src/libDDK/DriverKit
 /// /c%2B%2B/driver_base.h
 /// @brief This concept requires the driver 
@@ -142,8 +147,9 @@ When 2/3 of those questions fail, you should consider finding another solution t
 
 \section{Final Words and Conclusion}
 {
-This is the end of this paper, which has finally come to an end after three parts. \\
-A reference implementation of this philosophy exists, it's called NeKernel.org, available under the same internet address. \\
+We can now conclude that C++ in Kernel Development is indeed possible under strict conditions of C++ Development. \\
+Breaking those conditions would lead to system quirks and instability.
+A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address. \\
 I am looking forward to any questions or inquiries at: amlal@nekernel.org \\\\Yours truly, \\
 Amlal El Mahrouss
 }
