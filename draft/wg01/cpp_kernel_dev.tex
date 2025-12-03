@@ -59,9 +59,9 @@ struct MemoryTree final {
 };
 \end{lstlisting}
 
-As you can see these two structure 
+As you can see these two structures
 leverages the `constexpr' keyword to make sure
-no bugs or panic occurs at runtime\\because of a misuse of a system resource. \\
+no bugs or panic occur at runtime because of a misuse of a system resource. \\
 
 Which is why the constexpr keyword is very powerful here, we avoid the many pitfalls of writing (and hoping) that the C version will be well-thought enough so that we can catch such bugs later.
 
@@ -95,7 +95,7 @@ consteval void ce_ddk_is_valid(T) {}
 
 \subsection{Part Three: Memory and C++ Classes}
 {
-This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language dress a class lookup system (also called v-table) in order to refer to a base method in case if the instance has it missing.
+This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system (also called v-table) in order to refer to a base method in case if the instance has it missing.
 
 \begin{lstlisting}
 /// Link: https://godbolt.org/z/q3Wceannr
