@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: C++ in Kernel Development
-message: The NeKernel Paper.
+title: C++ for Kernel Development
+message: The NeKernel Paper. (WG01)
 type: software
 authors:
   - given-names: Amlal
@@ -13,7 +13,7 @@ identifiers:
 repository-code: 'https://github.com/nekernel-org/draft'
 url: 'https://nekernel.org'
 abstract: >-
-  This is The NeKernel Paper, authored by Amlal El Mahrouss.
+  This is The NeKernel Paper, from NeKernel.org WG01, authored by Amlal El Mahrouss.
 keywords:
   - kernel
   - cpp
