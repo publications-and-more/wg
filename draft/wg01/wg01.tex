@@ -1,14 +1,43 @@
-\documentclass{article}
+% AUTHOR: Amlal El Mahrouss
+% PURPOSE: WG01: Kernel C++
+
+\documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
 
-\lstset { %
-    language=C++
-}
+\definecolor{codegray}{gray}{0.95}
+\definecolor{codeblue}{rgb}{0.1,0.1,0.8}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
 
-\title{WG01: C++ for Kernel Development}
+\title{WG01: Kernel C++}
 \author{Amlal El Mahrouss\\NeKernel.org}
 \date{\today}
+
+\lstset{
+    language=C++,
+    backgroundcolor=\color{codegray},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{codegreen},
+    stringstyle=\color{codepurple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    rulecolor=\color{black},
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
 
 \begin{document}
 
@@ -31,7 +60,7 @@ A C++ Kernel may instead make use of compile-time features of C++ alongside a ti
 
 \subsection{Part Two: Constexpr and Friends}
 {
-One may avoid v-tables and runtime dependent features as much as possible. \\
+\textit{One may avoid V-tables or runtime dependent features when possible.}
 While focusing instead on meta-programming and compile-time features offered by C++. For example one may use templates to implement a scheduling policy algorithm. \\
 One example of such implementation may be: \\
 
@@ -59,8 +88,7 @@ struct MemoryTree final {
 };
 \end{lstlisting}
 
-As you can see these two structures
-leverages the `constexpr' keyword to make sure
+As you see, two structures leverages the `constexpr' keyword to make sure
 no bugs or panic occur at runtime because of a misuse of a system resource. \\
 
 Which is why the constexpr keyword is very powerful here, we avoid the many pitfalls of writing (and hoping) that the C version will be well-thought enough so that we can catch such bugs later.
@@ -79,9 +107,11 @@ The following example shows how powerful C++ can be when combining it with Devic
 /// @brief This concept requires the driver 
 /// to be IDriverBase compliant.
 
+constexpr auto kInvalidType = 0;
+
 template <typename T>
 concept IsValidDriver = requires(T a) {
-  { a.IsActive() && a.Type() > 0 };
+  { a.IsActive() && a.Type() > kInvalidType };
 };
 
 /// @brief Consteval helper to detect
@@ -128,7 +158,7 @@ int main() {
 }
 \end{lstlisting}
 
-\subsection{Addressing V-Tables in a C++ Kernel.}
+\section{Addressing V-Tables in a C++ Kernel.}
 
 Now the problem with kernel development is that we want to avoid such feature as much as possible, and we'd do that by following the Prong on Inheritance:
 
@@ -145,20 +175,20 @@ Consider the following questions:
 
 When 2/3 of those questions fail, you should consider finding another solution to your problem, as it surely has an equivalent without V-Tables.
 
-\section{Final Words and Conclusion}
+\section{Conclusion}
 {
 We can now conclude that C++ in Kernel Development is indeed possible under strict conditions of C++ Development. \\
 Breaking those conditions would lead to system quirks and instability.
 A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address. \\
-I am looking forward to any questions or inquiries at: amlal@nekernel.org \\\\Yours truly, \\
-Amlal El Mahrouss
+I am looking forward to any questions or inquiries at: amlal@nekernel.org.
 }
 
 \section{References}
 {
 \begin{itemize}
-    \item[EKA2:] https://en.wikipedia.org/wiki/EKA2
-    \item[NeKernel.org:] https://nekernel.org
+    \item[EKA2:] \href{https://en.wikipedia.org/wiki/EKA2}{Link}
+    \item[NeKernel.org:] \href{https://nekernel.org}{Link}
+    \item[Virtual Method Tables:] \href{https://en.wikipedia.org/wiki/Virtual_method_table}{Link}
 \end{itemize}
 }
 

@@ -1,10 +1,43 @@
-\documentclass{article}
+% AUTHOR: Amlal El Mahrouss
+% PURPOSE: WG02: CoreProcessScheduler
+
+\documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{hyperref}
 
 \title{WG02: The CoreProcessScheduler}
 \author{Amlal El Mahrouss\\NeKernel.org}
 \date{\today}
+
+\definecolor{codegray}{gray}{0.95}
+\definecolor{codeblue}{rgb}{0.1,0.1,0.8}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstset{
+    language=C++,
+    backgroundcolor=\color{codegray},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{codegreen},
+    stringstyle=\color{codepurple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    rulecolor=\color{black},
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
 
 \begin{document}
 
@@ -16,7 +49,7 @@
 
 \section{Overview}
 
-{The CoreProcessScheduler (now referred as CPS) serves as the intermediate foundal between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
+{The CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
 
 \section{The Affinity System}
 
@@ -26,7 +59,7 @@
 
 {The following sample is C++ code.} {The smaller the value, the more critical the process.}
 
-\begin{verbatim}
+\begin{lstlisting}
 enum class AffinityKind : Int32 {
   kRealTime     = 100,
   kVeryHigh     = 150,
@@ -35,7 +68,7 @@ enum class AffinityKind : Int32 {
   kLowUsage     = 1500,
   kVeryLowUsage = 2000,
 };
-\end{verbatim}
+\end{lstlisting}
 
 \section{The Team System}
 
@@ -45,7 +78,7 @@ enum class AffinityKind : Int32 {
 
 {The following sample is used to hold team metadata.} {This is part of the NeKernel source tree.}
 
-\begin{verbatim}
+\begin{lstlisting}
 class UserProcessTeam final {
  public:
   explicit UserProcessTeam();
@@ -63,8 +96,7 @@ class UserProcessTeam final {
   ProcessID          mTeamId{0};
   ProcessID          mProcessCur{0};
 };
-
-\end{verbatim}
+\end{lstlisting}
 
 \section{The Process Image System}
 
@@ -76,7 +108,7 @@ class UserProcessTeam final {
 
 {The following sample is a C++ container used to hold process data and metadata.} {This is part of the NeKernel source tree.}
 
-\begin{verbatim}
+\begin{lstlisting}
 using ImagePtr = void*;
 
 struct PROCESS_IMAGE final {
@@ -112,8 +144,7 @@ struct PROCESS_IMAGE final {
     return ErrorOr<ImagePtr>{kErrorInvalidData};
   }
 };
-
-\end{verbatim}
+\end{lstlisting}
 
 \section{Conclusion}
 
@@ -123,8 +154,13 @@ struct PROCESS_IMAGE final {
 
 \section{References}
 
-{NeKernel}: \href{https://github.com/nekernel-org/nekernel}{NeKernel}
-
-{CoreProcessScheduler}: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h}{CoreProcessScheduler}
+{
+\begin{itemize}
+    \item[CoreProcessScheduler:] \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h}{Link}
+    \item[NeKernel.org:] \href{https://nekernel.org/nekernel}{Link}
+    \item[Round Robin (OSTEP):] \href{https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf}{Link}
+    \item[Processor Affinity:] \href{https://www.tmurgent.com/WhitePapers/ProcessorAffinity.pdf}{Link}
+\end{itemize}
+}
 
 \end{document}
