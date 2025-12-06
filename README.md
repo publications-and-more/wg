@@ -1,7 +1,16 @@
-# The NeKernel Papers.
+# The WG Papers.
 
-## Brief
+## Introduction:
 
-Here are the NeKernel papers, freely available under Apache 2.0, Authored by Amlal El Mahrouss.<br/>
-If you wish to cite the paper, refer to the CITATION.cff.
+These are Working Group Papers of the NeKernel.org project.
+Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
+## Getting Started:
+
+Please fork and clone the repository first:
+
+```sh
+git clone git@github.com:<your-username>/draft.git
+```
+
+##### (c) 2025 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
