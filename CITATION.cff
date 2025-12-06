@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: NeKernel Papers. (Kernel C++)
-message: The NeKernel Papers. (WG01, and WG02)
+title: NeKernel WG Papers. (Kernel C++)
+message: The NeKernel WG Papers.
 type: software
 authors:
   - given-names: Amlal
@@ -9,11 +9,11 @@ authors:
 identifiers:
   - type: url
     value: 'https://nekernel.org'
-    description: NeKernel's website.
+    description: NeKernel.org
 repository-code: 'https://github.com/nekernel-org/draft'
 url: 'https://nekernel.org'
 abstract: >-
-  This is The NeKernel Papers, from NeKernel.org Working Groups, authored by Amlal El Mahrouss.
+  Working Group Papers of NeKernel.org
 keywords:
   - kernel
   - cpp
