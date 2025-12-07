@@ -43,9 +43,9 @@
 
 \maketitle
 
-\section{Abstract}
+\section{Introduction}
 {
-Many and most kernels have been shipped using the C programming language.\\
+Many Operating Systems Kernels have been shipped using the C programming language.\\
 And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel. \\
 That is the reason that most production-grade kernels (Linux, XNU, and NT) are mostly written in C. With a higher-level subset in C++. \\
 However, when correctly applying C++ principles to kernel development, one makes the development much more easier to pull off.
@@ -60,9 +60,9 @@ A C++ Kernel may instead make use of compile-time features of C++ alongside a ti
 
 \subsection{Part Two: Constexpr and Friends}
 {
-\textit{One may avoid V-tables or runtime dependent features when possible.}
-While focusing instead on meta-programming and compile-time features offered by C++. For example one may use templates to implement a scheduling policy algorithm. \\
-One example of such implementation may be: \\
+One may avoid V-tables or runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
+For example one may use templates to implement a scheduling policy algorithm.
+One example of such implementation may be:
 
 (Keep in mind that the code has not been tested on production systems, use it at your own risk!)
 
@@ -89,7 +89,7 @@ struct MemoryTree final {
 \end{lstlisting}
 
 As you see, two structures leverages the `constexpr' keyword to make sure
-no bugs or panic occur at runtime because of a misuse of a system resource. \\
+no bugs or panic occur at runtime because of a misuse of a system resource.
 
 Which is why the constexpr keyword is very powerful here, we avoid the many pitfalls of writing (and hoping) that the C version will be well-thought enough so that we can catch such bugs later.
 
@@ -141,7 +141,7 @@ public:
 
     virtual void doImpl() 
     {
-        std::cout << "doImpl\n";
+        kout << "doImpl()\r";
     }
 };
 
@@ -168,12 +168,14 @@ Consider the following questions:
 
 \begin{itemize}
 \item[A:] Is this a protocol/concept that can be extended to other similar protocols/concepts?
-\item[B:] Can I do this without too much trade-off costs?
-\item[C:] Can I do this without using V-Tables?
+\item[B:] Is this doable without too much trade-off costs?
+\item[C:] Is this doable without V-Tables?
 \end{itemize}
 }
 
-When 2/3 of those questions fail, you should consider finding another solution to your problem, as it surely has an equivalent without V-Tables.
+If 2/3 of those questions fail, 
+you should consider finding another solution to your problem. 
+As it surely has an equivalent without the problematic questions.
 
 \section{Conclusion}
 {
@@ -183,10 +185,11 @@ A reference implementation of this paper exists, It's called NeKernel.org, avail
 I am looking forward to any questions or inquiries at: amlal@nekernel.org.
 }
 
-\section{References}
+\subsection{References}
 {
 \begin{itemize}
     \item[EKA2:] \href{https://en.wikipedia.org/wiki/EKA2}{Link}
+    \item[XNU:] \href{https://en.wikipedia.org/wiki/XNU}{Link}
     \item[NeKernel.org:] \href{https://nekernel.org}{Link}
     \item[Virtual Method Tables:] \href{https://en.wikipedia.org/wiki/Virtual_method_table}{Link}
 \end{itemize}

@@ -2,7 +2,7 @@
 
 ## Introduction:
 
-These are Working Group Papers of the NeKernel.org project.
+This is the Working Group Papers of the NeKernel.org project.
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
 ## Getting Started:

@@ -43,15 +43,15 @@
 
 \maketitle
 
-\section{Abstract}
+\section{Introduction}
 
 {The CoreProcessScheduler governs how the scheduling backend and policy of the kernel works, It is the common gateway for schedulers inside NeKernel based systems.}
 
-\section{Overview}
+\section{Abstract}
 
 {The CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
 
-\section{The Affinity System}
+\subsection{The Affinity System}
 
 {Processes are given CPU time affinity hints using an affinity kind type, these hints help the scheduler run or adjust the current process.}
 
@@ -70,7 +70,7 @@ enum class AffinityKind : Int32 {
 };
 \end{lstlisting}
 
-\section{The Team System}
+\subsection{The Team System}
 
 {The team system holds process metadata for the backend scheduler to run on. It holds methods and fields for backend specific operations.} {One implementation of such team is the UserProcessTeam object inside NeKernel.}
 
@@ -98,7 +98,7 @@ class UserProcessTeam final {
 };
 \end{lstlisting}
 
-\section{The Process Image System}
+\subsection{The Process Image System}
 
 {The process image container is a design pattern made to contain process data and metadata, its purpose comes from the lack of mainstream operating systems of such ability to hold metadata.}
 
@@ -152,7 +152,7 @@ struct PROCESS_IMAGE final {
 
 {And while one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness, the CoreProcessScheduler takes care of the foundation for those systems.}
 
-\section{References}
+\subsection{References}
 
 {
 \begin{itemize}
