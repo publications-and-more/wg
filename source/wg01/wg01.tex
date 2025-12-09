@@ -141,7 +141,7 @@ public:
 
     virtual void doImpl() 
     {
-        kout << "doImpl()\r";
+        std::cout << "doImpl()\r\n";
     }
 };
 
@@ -175,12 +175,11 @@ Consider the following questions:
 
 If 2/3 of those questions fail, 
 you should consider finding another solution to your problem. 
-As it surely has an equivalent without the problematic questions.
+As it surely has an equivalent without the problematic points.
 
 \section{Conclusion}
 {
-We can now conclude that C++ in Kernel Development is indeed possible under strict conditions of C++ Development. \\
-Breaking those conditions would lead to system quirks and instability.
+We can now conclude that C++ in Kernel Development is indeed possible under a subset of C++, here called Kernel C++. \\
 A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address. \\
 I am looking forward to any questions or inquiries at: amlal@nekernel.org.
 }
