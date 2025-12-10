@@ -9,7 +9,7 @@
 
 \title{WG02: The CoreProcessScheduler}
 \author{Amlal El Mahrouss\\NeKernel.org}
-\date{\today}
+\date{November 2025}
 
 \definecolor{codegray}{gray}{0.95}
 \definecolor{codeblue}{rgb}{0.1,0.1,0.8}
@@ -86,13 +86,13 @@ class UserProcessTeam final {
 
   NE_COPY_DEFAULT(UserProcessTeam)
 
-  Array<USER_PROCESS, kSchedProcessLimitPerTeam>& AsArray();
-  Ref<USER_PROCESS>&                              AsRef();
+  Array<UserProcess, kSchedProcessLimitPerTeam>& AsArray();
+  Ref<UserProcess>&                              AsRef();
   ProcessID&                                      Id() noexcept;
 
  public:
-  USER_PROCESS_ARRAY mProcessList;
-  USER_PROCESS_REF   mCurrentProcess;
+  UserProcessArray mProcessList;
+  UserProcessRef   mCurrentProcess;
   ProcessID          mTeamId{0};
   ProcessID          mProcessCur{0};
 };
@@ -109,14 +109,14 @@ class UserProcessTeam final {
 {The following sample is a C++ container used to hold process data and metadata.} {This is part of the NeKernel source tree.}
 
 \begin{lstlisting}
-using ImagePtr = void*;
+using ImagePtr = VoidPtr;
 
-struct PROCESS_IMAGE final {
-  explicit PROCESS_IMAGE() = default;
+struct ProcessImage final {
+  explicit ProcessImage() = default;
 
  private:
-  friend USER_PROCESS;
-  friend KERNEL_TASK;
+  friend UserProcess;
+  friend KernelTask;
 
   friend class UserProcessScheduler;
 
@@ -156,10 +156,10 @@ struct PROCESS_IMAGE final {
 
 {
 \begin{itemize}
-    \item[CoreProcessScheduler:] \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h}{Link}
-    \item[NeKernel.org:] \href{https://nekernel.org/nekernel}{Link}
-    \item[Round Robin (OSTEP):] \href{https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf}{Link}
-    \item[Processor Affinity:] \href{https://www.tmurgent.com/WhitePapers/ProcessorAffinity.pdf}{Link}
+    \item[CoreProcessScheduler:] CoreProcessScheduler.h, \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h}{github.com}
+    \item[NeKernel.org:] NeKernel.org, \href{https://nekernel.org/nekernel}{nekernel.org}
+    \item[OSTEP:] Scheduling: Introduction, \href{https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf}{pages.cs.wisc.edu}
+    \item[Processor Affinity:] Processor Affinity, Multiple CPU Scheduling, \href{https://www.tmurgent.com/WhitePapers/ProcessorAffinity.pdf}{tmurgent.com}
 \end{itemize}
 }
 

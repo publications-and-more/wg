@@ -14,7 +14,7 @@
 
 \title{WG01: Kernel C++}
 \author{Amlal El Mahrouss\\NeKernel.org}
-\date{\today}
+\date{November 2025}
 
 \lstset{
     language=C++,
@@ -43,7 +43,7 @@
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction.}
 {
 Many Operating Systems Kernels have been shipped using the C programming language.\\
 And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel. \\
@@ -51,20 +51,18 @@ That is the reason that most production-grade kernels (Linux, XNU, and NT) are m
 However, when correctly applying C++ principles to kernel development, one makes the development much more easier to pull off.
 }
 
-\section{The Three Principles of Kernel C++}
+\section{The Three Principles of Kernel C++.}
 \subsection{Part One: The C++ Runtime}
 {
 The problem mostly lies in the C++ runtime. Which assumes an existing host. A host is the contrary of a freestanding target, that is a program which expects a runtime to be present and linked to the program. \\
 A C++ Kernel may instead make use of compile-time features of C++ alongside a tiny C++ runtime to make sure that no issues arise because of this host/freestanding difference.
 }
 
-\subsection{Part Two: Constexpr and Friends}
+\subsection{Part Two: Constexpr and Friends.}
 {
 One may avoid V-tables or runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
 For example one may use templates to implement a scheduling policy algorithm.
 One example of such implementation may be:
-
-(Keep in mind that the code has not been tested on production systems, use it at your own risk!)
 
 \begin{lstlisting}
 /// Reference Implementation: https://github.com
@@ -123,7 +121,7 @@ consteval void ce_ddk_is_valid(T) {}
 }
 }
 
-\subsection{Part Three: Memory and C++ Classes}
+\subsection{Part Three: Memory and C++ Classes.}
 {
 This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system (also called v-table) in order to refer to a base method in case if the instance has it missing.
 
@@ -164,12 +162,12 @@ Now the problem with kernel development is that we want to avoid such feature as
 
 \subsection{The Three Prongs on Inheritance:}
 
-Consider the following questions:
+TTPI is a thought exercise used to decide whether you should consider using C++ in a kernel. Consider the following thought exercise:
 
 \begin{itemize}
-\item[A:] Is this a protocol/concept that can be extended to other similar protocols/concepts?
-\item[B:] Is this doable without too much trade-off costs?
-\item[C:] Is this doable without V-Tables?
+\item[1:] Is this a feature that can be implementation with other similar protocols/concepts?
+\item[2:] Is this doable without too much trade-off costs?
+\item[3:] Is this doable without V-Tables?
 \end{itemize}
 }
 
@@ -184,13 +182,21 @@ A reference implementation of this paper exists, It's called NeKernel.org, avail
 I am looking forward to any questions or inquiries at: amlal@nekernel.org.
 }
 
-\subsection{References}
+\subsection{Additional Resources}
 {
 \begin{itemize}
-    \item[EKA2:] \href{https://en.wikipedia.org/wiki/EKA2}{Link}
-    \item[XNU:] \href{https://en.wikipedia.org/wiki/XNU}{Link}
-    \item[NeKernel.org:] \href{https://nekernel.org}{Link}
-    \item[Virtual Method Tables:] \href{https://en.wikipedia.org/wiki/Virtual_method_table}{Link}
+    \item[EKA2:] \href{https://en.wikipedia.org/wiki/EKA2}{wikipedia.org}
+    \item[XNU:] \href{https://en.wikipedia.org/wiki/XNU}{wikipedia.org}
+    \item[NeKernel.org:] \href{https://nekernel.org}{https://nekernel.org}
+\end{itemize}
+}
+
+\section{References}
+{
+\begin{itemize}
+    \item[NeKernel.org:] NeKernel.org, \href{https://nekernel.org}{https://nekernel.org}
+    \item[Sales. J, Tasker. M:] {Introducing EKA2, \href{https://media.wiley.com/product_data/excerpt/47/04700252/0470025247.pdf}{https://media.wiley.com}}
+    \item[Driesen. K, Hölzle. U:] {The direct cost of virtual function calls in C++, \href{https://dl.acm.org/doi/10.1145/236338.236369}{https://dl.acm.org}}
 \end{itemize}
 }
 
