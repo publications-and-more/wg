@@ -46,15 +46,15 @@
 \section{Introduction.}
 {
 Many Operating Systems Kernels have been shipped using the C programming language.\\
-And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel. \\
-That is the reason that most production-grade kernels (Linux, XNU, and NT) are mostly written in C. With a higher-level subset in C++. \\
+And some of them like EKA2 uses the C++ programming language. Although notoriously difficult, one may still adapt to those constraints in order to deliver one such operating system kernel.
+That is the reason that most production-grade kernels (Linux, XNU, and NT) are mostly written in C. With a higher-level subset in C++.
 However, when correctly applying C++ principles to kernel development, one makes the development much more easier to pull off.
 }
 
 \section{The Three Principles of Kernel C++.}
 \subsection{Part One: The C++ Runtime}
 {
-The problem mostly lies in the C++ runtime. Which assumes an existing host. A host is the contrary of a freestanding target, that is a program which expects a runtime to be present and linked to the program. \\
+The problem mostly lies in the C++ runtime. Which assumes an existing host. A host is the contrary of a freestanding target, that is a program which expects a runtime to be present and linked to the program.
 A C++ Kernel may instead make use of compile-time features of C++ alongside a tiny C++ runtime to make sure that no issues arise because of this host/freestanding difference.
 }
 
@@ -158,7 +158,7 @@ int main() {
 
 \section{Addressing V-Tables in a C++ Kernel.}
 
-Now the problem with kernel development is that we want to avoid such feature as much as possible, \\
+Now the problem with kernel development is that we want to avoid such feature as much as possible,
 and we'd do that by following the Prong on Inheritance:
 
 \subsection{The Three Prongs on Inheritance:}
@@ -178,8 +178,8 @@ As it surely has an equivalent without the problematic points.
 
 \section{Conclusion}
 {
-We can now conclude that C++ in Kernel Development is indeed possible under a subset of C++, here called Kernel C++. \\
-A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address. \\
+We can now conclude that C++ in Kernel Development is indeed possible under a subset of C++, here called Kernel C++.
+A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address.
 I am looking forward to any questions or inquiries at: amlal@nekernel.org.
 }
 
