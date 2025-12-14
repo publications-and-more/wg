@@ -182,10 +182,10 @@ If 2/3 of those questions fail,
 you should consider finding another solution to your problem. 
 As it surely has an equivalent without the problematic aspects.
 
-\subsection{The Vettable Pattern, validating containers for Freestanding C++.}
+\subsection{The Vettable Pattern, validating containers for Kernel C++.}
 
 The following concept makes sure that the `class T' is truly vettable by the Operating System Kernel.
-Such properties as called `Vettable' in NeKernel.
+Such properties are called `Vettable' in a C++ kernel.
 
 \begin{lstlisting}
 template <class T, typename OnFallback>
@@ -206,7 +206,7 @@ struct IVettable {
 };
 \end{lstlisting}
 
-A vettable system may look as such in a freestanding C++ system.
+A vettable system may look as such in a Kernel C++ system.
 
 \begin{lstlisting}
 #define NE_VETTABLE final : public ::Kernel::IVettable
@@ -256,7 +256,7 @@ concept IsNotVettable = requires(OnFallback fallback) {
 }  // namespace Kernel
 \end{lstlisting}
 
-Source \href{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}
+Source: \href{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}
 
 \section{Conclusion}
 {
