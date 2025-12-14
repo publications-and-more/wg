@@ -1,5 +1,5 @@
 % AUTHOR: Amlal El Mahrouss
-% PURPOSE: WG02: The CoreProcessScheduler
+% PURPOSE: he CoreProcessScheduler
 
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
@@ -8,7 +8,7 @@
 \usepackage{hyperref}
 \usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
 
-\title{WG02: The CoreProcessScheduler: Governance of Process and Image lifetime.}
+\title{CoreProcessScheduler: Governance of Process and Image lifetime.}
 \author{Amlal El Mahrouss}
 \date{December 2025}
 
@@ -49,11 +49,11 @@
 \end{center}
 
 \abstract
-{The CoreProcessScheduler governs how the scheduling backend and policy of the kernel works, It is the common gateway for schedulers inside NeKernel based systems.}
+{CoreProcessScheduler governs how the scheduling backend and policy of the kernel works, It is the common gateway for schedulers inside NeKernel based systems.}
 
 \section{Introduction}
 
-{The CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
+{CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
 
 \subsection{The Affinity System}
 
@@ -152,9 +152,9 @@ struct ProcessImage final {
 
 \section{Conclusion}
 
-{The CoreProcessScheduler is a piece of systems design with robust design and useful cases, although useful in desktop/server cases, It may not be suited for every other tasks.}
+{CoreProcessScheduler is a piece of systems design with robust design and useful cases, although useful in desktop/server cases, It may not be suited for every other tasks.}
 
-{And while one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness, the CoreProcessScheduler takes care of the foundation for those systems.}
+{And while one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness, CoreProcessScheduler takes care of the foundation for those systems.}
 
 \section{References}
 
