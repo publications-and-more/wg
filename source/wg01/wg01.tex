@@ -66,7 +66,7 @@ A C++ Kernel may instead make use of compile-time features of C++ alongside a ti
 
 \subsection{Part Two: Constexpr and Friends.}
 {
-One may avoid Virtual Memory Tables or a Runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
+One may avoid Virtual Method Tables or a Runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
 For example one may use templates to implement a scheduling policy algorithm.
 One example of such implementation may be:
 
@@ -129,7 +129,7 @@ consteval void ce_ddk_is_valid(T) {}
 
 \subsection{Part Three: Memory and C++ Classes.}
 {
-This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system also called a VMT (Virtual Memory Table) in order to refer to a base method in case if the instance has it missing.
+This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system also called a VMT (Virtual Method Table) in order to refer to a base method in case if the instance has it missing.
 
 \begin{lstlisting}
 /// Link: https://godbolt.org/z/aK6Y98xnd
