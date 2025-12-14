@@ -169,12 +169,12 @@ and we'd do that by following the Prong on Inheritance:
 
 \subsection{The Three Prongs on Inheritance Decision Framework.}
 
-TTPI is a thought exercise used to decide whether you should consider using C++ in a kernel. Consider the following thought exercise:
+TTPI is a thought exercise used to decide whether you should consider using C++ in a kernel, consider the following:
 
 \begin{itemize}
 \item[1:] Is this a feature that can be implemented with other similar protocols/concepts?
-\item[2:] Is this doable without too much trade-off costs?
-\item[3:] Is this doable without V-Tables?
+\item[2:] Is this possible without too much trade-off costs?
+\item[3:] Is this possible without V-Tables?
 \end{itemize}
 }
 
@@ -185,7 +185,7 @@ As it surely has an equivalent without the problematic aspects.
 \subsection{The Vettable Pattern, validating containers for Kernel C++.}
 
 The following concept makes sure that the `class T' is truly vettable by the Operating System Kernel.
-Such properties are called `Vettable' in a C++ kernel.
+Such properties are called `Vettable' in such program.
 
 \begin{lstlisting}
 template <class T, typename OnFallback>
@@ -194,7 +194,7 @@ concept IsVettable = requires(OnFallback fallback) {
 };
 \end{lstlisting}
 
-The vettable structure makes use of template metaprogramming in modern C++ in order to evaluate whether a container is vettable or not, 
+The vettable structure makes use of template metaprogramming in modern C++ to evaluate whether a container is vettable or not, 
 such containers inherits the `IVettable' structure and are marked final.
 
 \begin{lstlisting}
@@ -209,50 +209,45 @@ struct IVettable {
 A vettable system may look as such in a Kernel C++ system.
 
 \begin{lstlisting}
-#define NE_VETTABLE final : public ::Kernel::IVettable
-#define NE_NOT_VETTABLE final : public ::Kernel::INotVettable
+#define NE_VETTABLE \
+final:            \
+public            \
+::Kernel::IVettable
+
+#define NE_NOT_VETTABLE \
+final:                \
+public                \
+::Kernel::INotVettable
 
 namespace Kernel {
-/// @brief Vet interface for objects.
-struct IVettable {
-  explicit IVettable() = default;
-  virtual ~IVettable() = default;
-
-  NE_COPY_DEFAULT(IVettable)
-};
-
-struct INotVettable {
-  explicit INotVettable() = default;
-  virtual ~INotVettable() = default;
-
-  NE_COPY_DEFAULT(INotVettable)
-};
-
-template <class Type>
-struct Vettable final {
-  static constexpr bool kValue = false;
-};
-
-template <>
-struct Vettable<INotVettable> final {
-  static constexpr bool kValue = false;
-};
-
-template <>
-struct Vettable<IVettable> final {
-  static constexpr bool kValue = true;
-};
-
-/// @brief Concept version of Vettable.
-template <typename T, typename OnFallback>
-concept IsVettable = requires(OnFallback fallback) {
-  { Vettable<T>::kValue ? true : fallback() };
-};
-
-template <class Type, typename OnFallback>
-concept IsNotVettable = requires(OnFallback fallback) {
-  { !Vettable<Type>::kValue ? true : fallback() };
-};
+	/// @brief Vet interface for objects.
+	struct IVettable {
+		explicit IVettable() = default;
+		virtual ~IVettable() = default;
+		
+		NE_COPY_DEFAULT(IVettable)
+	};
+	
+	template <class Type>
+	struct Vettable final {
+		static constexpr bool kValue = false;
+	};
+	
+	template <>
+	struct Vettable<IVettable> final {
+		static constexpr bool kValue = true;
+	};
+	
+	/// @brief Concept version of Vettable.
+	template <typename Type, typename OnFallback>
+	concept IsVettable = requires(OnFallback fallback) {
+		{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : fallback() };
+	};
+	
+	template <class Type, typename OnFallback>
+	concept IsNotVettable = requires(OnFallback fallback) {
+		{ !Vettable<Type>::kValue ? TrueResult<Type>::kValue : fallback() };
+	};
 }  // namespace Kernel
 \end{lstlisting}
 
