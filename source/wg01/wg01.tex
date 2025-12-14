@@ -66,7 +66,7 @@ A C++ Kernel may instead make use of compile-time features of C++ alongside a ti
 
 \subsection{Part Two: Constexpr and Friends.}
 {
-One may avoid V-tables or runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
+One may avoid Virtual Memory Tables or a Runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
 For example one may use templates to implement a scheduling policy algorithm.
 One example of such implementation may be:
 
@@ -129,7 +129,7 @@ consteval void ce_ddk_is_valid(T) {}
 
 \subsection{Part Three: Memory and C++ Classes.}
 {
-This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system (also called v-table) in order to refer to a base method in case if the instance has it missing.
+This last part treats about the final and most important part of this paper so far. Memory. As you may already have known, the C++ language uses a class lookup system also called a VMT (Virtual Memory Table) in order to refer to a base method in case if the instance has it missing.
 
 \begin{lstlisting}
 /// Link: https://godbolt.org/z/aK6Y98xnd
@@ -162,19 +162,19 @@ int main() {
 }
 \end{lstlisting}
 
-\section{Addressing V-Tables in a C++ Kernel.}
+\section{Addressing VMTs in a C++ Kernel.}
 
 Now the problem with kernel development is that we want to avoid such feature as much as possible,
 and we'd do that by following the Prong on Inheritance:
 
 \subsection{The Three Prongs on Inheritance Decision Framework.}
 
-TTPI is a thought exercise used to decide whether you should consider using C++ in a kernel, consider the following:
+TTPI is a boolean framework used to evaluate whether one may consider using C++ in a kernel. Consider the following:
 
 \begin{itemize}
 \item[1:] Is this a feature that can be implemented with other similar protocols/concepts?
 \item[2:] Is this possible without too much trade-off costs?
-\item[3:] Is this possible without V-Tables?
+\item[3:] Is this possible without a VMT?
 \end{itemize}
 }
 
