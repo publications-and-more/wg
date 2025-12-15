@@ -1,7 +1,7 @@
 % AUTHOR: Amlal El Mahrouss
-% PURPOSE: Kernel C++: A Methodology for Freestanding Development
+% PURPOSE: WG01: Kernel C++: A Methodology for Freestanding Development
 
-\documentclass[11pt, a4paper]{extarticle}
+\documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -16,7 +16,7 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 
 \title{Kernel C++: A Methodology for Freestanding Development}
-\author{Amlal El Mahrouss}
+\author{Amlal El Mahrouss\\amlal@nekernel.org}
 \date{December 2025}
 
 \lstset{
@@ -44,7 +44,7 @@
 
 \begin{document}
 
-\maketitle
+\bf \maketitle
 
 \begin{center}
 \rule[1cm]{17cm}{0.01cm}
@@ -58,24 +58,18 @@ However, when correctly applying C++ principles to kernel development, it become
 }
 
 \section{The Three Principles of Kernel C++.}
-\subsection{Part One: The C++ Runtime.}
+\subsection{Part One: The Run-Time Domain.}
 {
 The problem lies in the C++ runtime, which assumes an existing host. The contrary of a hosted environment, freestanding, is a runtime which doesn't expect a hosted runtime. Such freestanding target may make use of compile-time evaluation of the C++ programming alongside a minimal C++ runtime to write such programs.
 }
 
-\subsection{Part Two: Compile-Time Evaluation.}
+\subsection{Part Two: The Compile-Time Evaluation Domain.}
 {
 One may avoid Virtual Method Tables or a runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
 For example one may use templates to implement a scheduling policy algorithm.
 One example of such implementation may be:
 
 \begin{lstlisting}
-/// Reference Implementation: https://github.com
-/// /nekernel-org/nekernel/blob/develop/src/kernel/
-/// KernelKit/CoreProcessScheduler.h#L51-L76
-/// AND: https://github.com/nekernel-org/nekernel/blob/develop/src/kernel
-/// /KernelKit/CoreProcessScheduler.h#L78-L105
-
 struct FileTree final {
     static constexpr bool is_virtual_memory = false;
     static constexpr bool is_memory = false;
@@ -96,7 +90,6 @@ struct MemoryTree final {
 The Virtual Method Table (now defined as the VMT) is a big part of the problem, one may illustrate the following:
 
 \begin{lstlisting}
-/// Link: https://godbolt.org/z/aK6Y98xnd
 /// /std:c++20 /Wall
 
 #include <iostream>
@@ -124,7 +117,7 @@ int main() {
     B callImpl;
     callImpl.doImpl();
 }
-\end{lstlisting} The following can instead be done to achieve similar results using the Compile-Time Evaluation Domain.
+\end{lstlisting} Source: \href{https://godbolt.org/z/aK6Y98xnd}{https://godbolt.org/z/aK6Y98xnd}. The following can instead be done to achieve similar results using the Compile-Time Evaluation Domain.
 
 \begin{lstlisting}
 inline constexpr auto kInvalidType = 0;
@@ -133,7 +126,7 @@ template <class Driver>
 concept IsValidDriver = requires(Driver drv) {
 	{ drv.IsActive() && drv.Type() > kInvalidType };
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c\%2B\%2B/driver\_base.h} Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c\%2B\%2B/driver\_base.h}. Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
 
 \subsection{The Three Prongs on Inheritance Decision Framework.}
 
@@ -180,13 +173,12 @@ template <typename Type, FallbackType OnFallback>
 concept IsVettable = requires() {
 	{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : OnFallback(PropertyResult<Type>::kValue) };
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}.
 
 \section{Conclusion}
 {
-We can now conclude that C++ in Kernel Development is indeed possible under a subset of C++, here called Kernel C++.
+Modern C++ in a freestanding domain is indeed possible granted the above concepts are applied and respected.
 A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address.
-We are looking forward to any questions or inquiries at: contact@nekernel.org.
 }
 
 \section{References}

@@ -1,5 +1,5 @@
 % AUTHOR: Amlal El Mahrouss
-% PURPOSE: he CoreProcessScheduler
+% PURPOSE: WG02: CoreProcessScheduler
 
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
@@ -8,8 +8,8 @@
 \usepackage{hyperref}
 \usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
 
-\title{CoreProcessScheduler: Governance of Process and Image lifetime.}
-\author{Amlal El Mahrouss}
+\title{CoreProcessScheduler: Methodology for Process and Image Computation.}
+\author{Amlal El Mahrouss\\amlal@nekernel.org}
 \date{December 2025}
 
 \definecolor{codegray}{gray}{0.95}
@@ -42,7 +42,7 @@
 
 \begin{document}
 
-\maketitle
+\bf \maketitle
 
 \begin{center}
 \rule[1cm]{17cm}{0.01cm}
@@ -51,15 +51,15 @@
 \abstract
 {CoreProcessScheduler governs how the scheduling backend and policy of the kernel works, It is the common gateway for schedulers inside NeKernel based systems.}
 
-\section{Introduction}
+\section{Introduction.}
 
 {CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and kernel.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
 
-\subsection{The Affinity System}
+\subsection{The Affinity System.}
 
 {Processes are given CPU time affinity hints using an affinity kind type, these hints help the scheduler run or adjust the current process.}
 
-\subsection{Sample Code \#1}
+\subsection{Illustration: the Affinity Kind.}
 
 {The following sample is C++ code.} {The smaller the value, the more critical the process.}
 
@@ -74,11 +74,11 @@ enum struct AffinityKind : Int32 {
 };
 \end{lstlisting}
 
-\subsection{The Team System}
+\subsection{The Team Domain System.}
 
 {The team system holds process metadata for the backend scheduler to run on. It holds methods and fields for backend specific operations.} {One implementation of such team is the UserProcessTeam object inside NeKernel.}
 
-\subsection{Sample Code \#2}
+\subsection{Illustration: Team System.}
 
 {The following sample is used to hold team metadata.} {This is part of the NeKernel source tree.}
 
@@ -104,11 +104,9 @@ class UserProcessTeam final {
 
 \subsection{The Process Image System}
 
-{The process image container is a design pattern made to contain process data and metadata, its purpose comes from the lack of mainstream operating systems of such ability to hold metadata.}
+{The `ProcessImage' container is a system designed to contain process data, and metadata, its purpose comes from the need to separate data and code. Such usage is useful for validation and vettability.} {This approach helps separate concerns and give modularity to the system, as the image and process structure are not mixed together.}
 
-{This approach helps separate concerns and give modularity to the system, as the image and process structure are not mixed together.}
-
-\subsection{Sample Code \#3}
+\subsection{Illustration: Process Image System.}
 
 {The following sample is a C++ container used to hold process data and metadata.} {This is part of the NeKernel source tree.}
 
@@ -150,11 +148,9 @@ struct ProcessImage final {
 };
 \end{lstlisting}
 
-\section{Conclusion}
+\section{Conclusion.}
 
-{CoreProcessScheduler is a piece of systems design with robust design and useful cases, although useful in desktop/server cases, It may not be suited for every other tasks.}
-
-{And while one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness, CoreProcessScheduler takes care of the foundation for those systems.}
+{The CPS is a system with provable domains and separation of computation, the CPS itself governs how a Process Domain shall compute its child processes, it does not provide the algorithms.} {Which is why, one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness.}
 
 \section{References}
 
