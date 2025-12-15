@@ -166,46 +166,30 @@ If two of the three conditions fail, then the framework fails, and you should co
 The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `IVettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted, such containers inherit the `IVettable' structure and are marked final. Such system may look like this in a Compile-Time Evaluation Domain:
 
 \begin{lstlisting}
-#define NE_VETTABLE \
-final:            \
-public            \
-::Kernel::IVettable
+struct IVettable {
+	explicit IVettable() = default;
+	virtual ~IVettable() = default;
+	
+	NE_COPY_DEFAULT(IVettable)
+};
 
-#define NE_NOT_VETTABLE \
-final:                \
-public                \
-::Kernel::INotVettable
+template <class Type>
+struct Vettable final {
+	static constexpr bool kValue = false;
+};
 
-namespace Kernel {
-	/// @brief Vet interface for objects.
-	struct IVettable {
-		explicit IVettable() = default;
-		virtual ~IVettable() = default;
-		
-		NE_COPY_DEFAULT(IVettable)
-	};
-	
-	template <class Type>
-	struct Vettable final {
-		static constexpr bool kValue = false;
-	};
-	
-	template <>
-	struct Vettable<IVettable> final {
-		static constexpr bool kValue = true;
-	};
-	
-	/// @brief Concept version of Vettable.
-	template <class Type, class OnFallback>
-	concept IsVettable = requires(OnFallback fallback) {
-		{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : fallback() };
-	};
-	
-	template <class Type, class OnFallback>
-	concept IsNotVettable = requires(OnFallback fallback) {
-		{ !Vettable<Type>::kValue ? TrueResult<Type>::kValue : fallback() };
-	};
-}  // namespace Kernel
+template <>
+struct Vettable<IVettable> final {
+	static constexpr bool kValue = true;
+};
+
+using FallbackType = bool (*)(bool);
+
+/// @brief Concept version of Vettable.
+template <typename Type, FallbackType OnFallback>
+concept IsVettable = requires() {
+	{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : OnFallback(FalseResult<Type>::kValue) };
+};
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}
 
 \section{Conclusion}
