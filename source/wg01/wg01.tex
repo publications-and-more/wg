@@ -71,9 +71,9 @@ One example of such implementation may be:
 
 \begin{lstlisting}
 /// Reference Implementation: https://github.com
-/// /nekernel-org/nekernel/blob/stable/src/kernel/
+/// /nekernel-org/nekernel/blob/develop/src/kernel/
 /// KernelKit/CoreProcessScheduler.h#L51-L76
-/// AND: https://github.com/nekernel-org/nekernel/blob/stable/src/kernel
+/// AND: https://github.com/nekernel-org/nekernel/blob/develop/src/kernel
 /// /KernelKit/CoreProcessScheduler.h#L78-L105
 
 struct FileTree final {
@@ -89,7 +89,7 @@ struct MemoryTree final {
     static constexpr bool is_file = false;
     /// ...
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/KernelKit/CoreProcessScheduler.h#L78-L105}{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/KernelKit/CoreProcessScheduler.h} Which is why the `constexpr' keyword is very powerful here for the Compile-Time Evaluation Domain, we avoid the many pitfalls of the Run-Time Evaluation Domain.
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h#L78-L105}{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h} Which is why the `constexpr' keyword is very powerful here for the Compile-Time Evaluation Domain, we avoid the many pitfalls of the Run-Time Evaluation Domain.
 
 \subsection{Part Three: Memory and C++ Classes.}
 {
@@ -127,23 +127,13 @@ int main() {
 \end{lstlisting} The following can instead be done to achieve similar results using the Compile-Time Evaluation Domain.
 
 \begin{lstlisting}
-/// Reference implementation:
-/// https://github.com/nekernel-org
-/// /nekernel/blob/stable/src/libDDK/DriverKit
-/// /c%2B%2B/driver_base.h
-/// @brief This concept requires the driver 
-/// to be IDriverBase compliant.
-
 inline constexpr auto kInvalidType = 0;
 
 template <class Driver>
 concept IsValidDriver = requires(Driver drv) {
 	{ drv.IsActive() && drv.Type() > kInvalidType };
 };
-
-template<IsValidDriver T>
-consteval void ce_ddk_is_valid(T) {}
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/stable/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{https://github.com/nekernel-org/nekernel/blob/stable/src/libDDK/DriverKit/c\%2B\%2B/driver\_base.h} Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c\%2B\%2B/driver\_base.h} Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
 
 \subsection{The Three Prongs on Inheritance Decision Framework.}
 
@@ -183,14 +173,14 @@ struct Vettable<IVettable> final {
 	static constexpr bool kValue = true;
 };
 
-using FallbackType = bool (*)(bool);
+using FallbackType = bool (*)(bool type_value);
 
 /// @brief Concept version of Vettable.
 template <typename Type, FallbackType OnFallback>
 concept IsVettable = requires() {
-	{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : OnFallback(FalseResult<Type>::kValue) };
+	{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : OnFallback(PropertyResult<Type>::kValue) };
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/stable/src/kernel/NeKit/Vettable.h}
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}
 
 \section{Conclusion}
 {
