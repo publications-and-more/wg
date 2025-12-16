@@ -13,4 +13,10 @@ Please fork and clone the repository first:
 git clone git@github.com:<your-username>/draft.git
 ```
 
+## Requirements:
+
+- LiveTeX
+- Git
+- GNU CoreUtils
+
 ##### (c) 2025 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
