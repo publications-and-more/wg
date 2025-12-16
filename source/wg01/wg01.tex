@@ -166,12 +166,12 @@ struct Vettable<IVettable> final {
 	static constexpr bool kValue = true;
 };
 
-using FallbackType = bool (*)(bool type_value);
+template <typename Type>
+using FallbackType = Void (*)(const PropertyResult<Type>& type_value);
 
-/// @brief Concept version of Vettable.
-template <typename Type, FallbackType OnFallback>
+template <typename Type, FallbackType<Type> OnFallback>
 concept IsVettable = requires() {
-	{ Vettable<Type>::kValue ? TrueResult<Type>::kValue : OnFallback(PropertyResult<Type>::kValue) };
+	{ Vettable<Type>::kValue ? TrueResult<Type>{} : OnFallback(PropertyResult<Type>{}) };
 };
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}.
 
