@@ -6,7 +6,7 @@ TEX := htlatex
 ECHO := @echo
 
 all: html-wg01 html-wg02
-	$(ECHO) "=>  Done building Tex files."
+	$(ECHO) "=> Done building Tex files."
 
 .PHONY: html-wg01
 html-wg01:
