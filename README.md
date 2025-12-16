@@ -1,8 +1,6 @@
-# The WG Papers.
+# Introduction:
 
-## Introduction:
-
-This is the Working Group Papers of the NeKernel.org project.
+This is the Working Group papers of NeKernel.org.
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
 ## Getting Started:

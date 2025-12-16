@@ -1,10 +1,10 @@
-# Introduction
+# Introduction:
 
 This file indexes the different working groups and their purpose.
 
 ## Working Groups:
 
-The following working groups are active:
+Here are the following active working groups:
 
 - WG01: `Kernel Architecture Group.`
 - WG02: `Multi-Tasking Group.`

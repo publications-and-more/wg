@@ -2,13 +2,16 @@
 # Author: Amlal El Mahrouss
 # Purpose: Generate HTML papers from LaTex documents.
 
+TEX := htlatex
+ECHO := @echo
+
 all: html-wg01 html-wg02
-	@echo "=> DONE.
+	$(ECHO) "=>  Done building Tex files."
 
 .PHONY: html-wg01
 html-wg01:
-	htlatex source/wg01/wg01.tex
+	$(TEX) source/wg01/wg01.tex
 
 .PHONY: html-wg02
 html-wg02:
-	htlatex source/wg02/wg02.tex
+	$(TEX) source/wg02/wg02.tex
