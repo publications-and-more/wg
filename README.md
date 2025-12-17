@@ -17,4 +17,9 @@ git clone git@github.com:<your-username>/draft.git
 - Git
 - GNU CoreUtils
 
+## Recommended Tools:
+
+- Use `pdflatex` for PDF generation.
+- Use `Overleaf` to edit the LaTeX files.
+
 ##### (c) 2025 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
