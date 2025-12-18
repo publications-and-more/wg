@@ -1,6 +1,7 @@
 # Introduction:
 
-This is the Working Group papers of NeKernel.org.
+This is the Working Group papers of NeKernel.
+<br/>
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
 ## Getting Started:
@@ -13,9 +14,9 @@ git clone git@github.com:<your-username>/draft.git
 
 ## Requirements:
 
-- LiveTeX
+- LiveTeX (htlatex, pdflatex)
 - Git
-- GNU CoreUtils
+- CoreUtils
 
 ## Recommended Tools:
 
