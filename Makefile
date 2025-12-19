@@ -1,6 +1,6 @@
 # File: Makefile
 # Author: Amlal El Mahrouss
-# Purpose: Generate HTML papers from LaTex documents.
+# Purpose: Generate HTML and PDF papers from LaTex documents.
 
 PDFTEX := pdflatex
 HTTEX := htlatex
@@ -18,3 +18,5 @@ html-wg01:
 html-wg02:
 	$(HTTEX) source/wg02/wg02.tex
 	$(PDFTEX) source/wg02/wg02.tex
+
+

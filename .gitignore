@@ -14,4 +14,8 @@
 *.4tc
 *.lg
 *.tmp
+*.cmi
+*.cmx
+*.o
+*.out
 Makefile~
