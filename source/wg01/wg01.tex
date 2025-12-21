@@ -56,12 +56,12 @@ This is why most production-grade software (Linux, XNU, and NT) are mostly writt
 }
 
 \section{The Three Principles of Freestanding Development.}
-\subsection{Part One: The Run-Time Domain.}
+\subsection{I: The Run-Time Domain.}
 {
-The problem lies in the C++ runtime, which assumes an existing host. The contrary of a hosted environment, freestanding, is a runtime which doesn't expect a hosted runtime. Such freestanding target may make use of compile-time evaluation of the C++ programming alongside a minimal C++ runtime to write such programs.
+The problem lies in the programming language runtime, which assumes an existing host. The contrary of a hosted environment is freestanding, a computing mode which doesn't expect a hosted runtime. Such programs may use the compile-time evaluation domain to achieve minimal run-time domain usage.
 }
 
-\subsection{Part Two: The Compile-Time Evaluation Domain.}
+\subsection{II: The Compile-Time Evaluation Domain.}
 {
 One may avoid Virtual Method Tables or a runtime when possible. While focusing instead on meta-programming and compile-time features offered by C++. 
 For example one may use templates to implement a scheduling policy algorithm.
@@ -83,7 +83,7 @@ struct MemoryTree final {
 };
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h#L78-L105}{Link}. \\ Which is why the `constexpr' keyword is very powerful here for the Compile-Time Evaluation Domain, we avoid the many pitfalls of the Run-Time Evaluation Domain.
 
-\subsection{Part Three: Memory Layout and the example of C++.}
+\subsection{III: Memory Layout and the example of C++.}
 {
 The Virtual Method Table (now defined as the VMT) is a big part of the problem, one may illustrate the following:
 
@@ -126,7 +126,7 @@ concept IsValidDriver = requires(Driver drv) {
 };
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{Link}.\\ Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
 
-\subsection{The Three Prongs on Inheritance Decision Framework.}
+\subsection{IV: The Three Prongs on Inheritance Decision Framework.}
 
 The TTPI is a boolean framework used to evaluate whether one may consider using a Object Oriented programming language inside a freestanding program, consider the following:
 
@@ -142,7 +142,7 @@ The TTPI is a boolean framework used to evaluate whether one may consider using 
 
 If two of the three conditions fail, then the framework fails, and you should consider finding another solution to your problem as it surely has an equivalent without the problematic aspects.
 
-\subsection{Compile-Time Vetting in a Freestanding Domain.}
+\subsection{V: Compile-Time Vetting in a Freestanding Domain.}
 
 The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `IVettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted, such containers inherit the `IVettable' structure and are marked final. Such system may look like this in a Compile-Time Evaluation Domain:
 
