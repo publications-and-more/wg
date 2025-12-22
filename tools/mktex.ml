@@ -38,5 +38,6 @@ let () = if Array.length Sys.argv >= 3 then
       fprintf file format Sys.argv.(title_index);
     close_out file;
   else
+    printf "mktex - build LaTeX documents.\n";
     printf "usage: <file_name> <document_title>\n";
 
