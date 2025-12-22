@@ -144,7 +144,7 @@ If two of the three conditions fail, then the framework fails, and you should co
 
 \subsection{V: Compile-Time Vetting in a Freestanding Domain.}
 
-The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `IVettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted, such containers inherit the `IVettable' structure and are marked final. Such system may look like this in a Compile-Time Evaluation Domain:
+The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `Vettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted. Such system may look as such in a Compile-Time Evaluation Domain:
 
 \begin{lstlisting}
 #define NE_VETTABLE static constexpr BOOL kVettable = YES;
@@ -171,11 +171,10 @@ if constexpr (IsVettable<UnVettable>) {
 } else {
 	instVet->Abort();
 }
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{Link}. \\Note: This is one approach to compile time vetting, one may solve this using tags instead of a base `IVettable' class.
+\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{Link}.
 
-\section{Conclusion}
-{ Safe and correct development in a freestanding domain is indeed possible granted the above concepts are applied and respected. A reference implementation of this paper exists, It's called NeKernel.org, available under the same internet address.
-}
+\section{VI: Conclusion}
+{ Safe and correct development in a freestanding domain is indeed possible granted the above concepts are applied and respected.
 
 \section{References}
 

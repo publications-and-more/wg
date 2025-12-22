@@ -51,11 +51,11 @@
 \abstract
 {CoreProcessScheduler governs how the scheduling backend and policy of the system works, It is the common gateway for schedulers inside NeKernel based systems.}
 
-\section{Introduction.}
+\section{I: Introduction.}
 
 {CoreProcessScheduler (now referred as CPS) serves as the foundation between the scheduler backend and system.} {It takes care of process life-cycle management, team-based process grouping, and affinity-based CPU based allocation to mention the least.}
 
-\subsection{The Affinity System.}
+\subsection{II: The Affinity System.}
 
 {Processes are given CPU time affinity hints using an affinity kind type, these hints help the scheduler run or adjust the current process.}
 
@@ -74,7 +74,7 @@ enum struct AffinityKind : Int32 {
 };
 \end{lstlisting}
 
-\subsection{The Team Domain System.}
+\subsection{III: The Team Domain System.}
 
 {The team system holds process metadata for the backend scheduler to run on. It holds methods and fields for backend specific operations.} {One implementation of such team is the UserProcessTeam object inside NeKernel.}
 
@@ -102,7 +102,7 @@ class UserProcessTeam final {
 };
 \end{lstlisting}
 
-\subsection{The Process Image System}
+\subsection{IV: The Process Image System}
 
 {The `ProcessImage' container is a system designed to contain process data, and metadata, its purpose comes from the need to separate data and code. Such usage is useful for validation and vettability.} {This approach helps separate concerns and give modularity to the system, as the image and process structure are not mixed together.}
 
@@ -148,7 +148,7 @@ struct ProcessImage final {
 };
 \end{lstlisting}
 
-\section{Conclusion.}
+\section{V: Conclusion.}
 
 {The CPS is a system with provable domains and separation of computation, the CPS itself governs how a Process Domain shall compute its child processes, it does not provide the algorithms.} {Which is why, one scheduler backend (such as the UserProcessScheduler) takes care of user process scheduling and fairness.}
 
