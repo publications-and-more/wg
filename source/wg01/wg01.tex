@@ -147,30 +147,30 @@ If two of the three conditions fail, then the framework fails, and you should co
 The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `IVettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted, such containers inherit the `IVettable' structure and are marked final. Such system may look like this in a Compile-Time Evaluation Domain:
 
 \begin{lstlisting}
-struct IVettable {
-	explicit IVettable() = default;
-	virtual ~IVettable() = default;
-	
-	NE_COPY_DEFAULT(IVettable)
-};
+#define NE_VETTABLE static constexpr BOOL kVettable = YES;
+#define NE_NON_VETTABLE static constexpr BOOL kVettable = NO;
 
 template <class Type>
-struct Vettable final {
-	static constexpr bool kValue = false;
+concept IsVettable = requires(Type) {
+	(Type::kVettable);
 };
 
-template <>
-struct Vettable<IVettable> final {
-	static constexpr bool kValue = true;
+/// This structure is vettable.
+struct UnVettable {
+	NE_VETTABLE;
 };
 
-template <typename Type>
-using FallbackType = Void (*)(const PropertyResult<Type>& type_value);
-
-template <typename Type, FallbackType<Type> OnFallback>
-concept IsVettable = requires() {
-	{ Vettable<Type>::kValue ? TrueResult<Type>{} : OnFallback(PropertyResult<Type>{}) };
+/// This structure is unvettable.
+struct UnVettable {
+	NE_NON_VETTABLE;
 };
+
+/// One example of a usage.
+if constexpr (IsVettable<UnVettable>) {
+	instVet->Vet();
+} else {
+	instVet->Abort();
+}
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{Link}. \\Note: This is one approach to compile time vetting, one may solve this using tags instead of a base `IVettable' class.
 
 \section{Conclusion}
