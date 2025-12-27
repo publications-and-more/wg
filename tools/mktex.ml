@@ -40,4 +40,3 @@ let () = if Array.length Sys.argv >= 3 then
   else
     printf "mktex - build LaTeX documents.\n";
     printf "usage: <file_name> <document_title>\n";
-
