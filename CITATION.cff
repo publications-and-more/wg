@@ -15,7 +15,8 @@ url: 'https://nekernel.org'
 abstract: >-
   Working Group Papers of NeKernel.org
 keywords:
-  - kernel
+  - os
   - cpp
-  - modern_cpp
+  - systems
+  - pl
 license: Apache-2.0
