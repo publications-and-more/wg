@@ -16,8 +16,8 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 
 \title{Methodology for Freestanding Development.}
-\author{Amlal El Mahrouss.\\amlal@nekernel.org}
-\date{December 2025}
+\author{Amlal El Mahrouss\\amlal@nekernel.org}
+\date{December 2025\\Last Edited: January 2026}
 
 \lstset{
     language=C++,
@@ -56,7 +56,7 @@ This is why most production-grade software (Linux, XNU, and NT) are mostly writt
 }
 
 \section{The Three Principles of Freestanding Development.}
-\subsection{I: The Run-Time Domain.}
+\subsection{I: The Run-Time Evaluation Domain.}
 {
 The problem lies in the programming language runtime, which assumes an existing host. The contrary of a hosted environment is freestanding, a computing mode which doesn't expect a hosted runtime. Such programs may use the compile-time evaluation domain to achieve minimal run-time domain usage.
 }
@@ -122,11 +122,11 @@ inline constexpr auto kInvalidType = 0;
 
 template <class Driver>
 concept IsValidDriver = requires(Driver drv) {
-	{ static_assert(drv.IsActive() && drv.Type() > kInvalidType, "Driver is not valid for usage.") };
+	{ drv.IsActive() && drv.Type() > kInvalidType };
 };
 \end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{Link}.\\ Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
 
-\subsection{IV: The Three Prongs on Inheritance Decision Framework.}
+\subsection{IV: The Three Prongs on Inheritance.}
 
 The TTPI is a boolean framework used to evaluate whether one may consider using a Object Oriented programming language inside a freestanding program, consider the following:
 
@@ -140,9 +140,7 @@ The TTPI is a boolean framework used to evaluate whether one may consider using 
 \end{itemize}
 }
 
-If two of the three conditions fail, then the framework fails, and you should consider finding another solution to your problem as it surely has an equivalent without the problematic aspects.
-
-\subsection{V: Compile-Time Vetting in a Freestanding Domain.}
+\subsection{V: Compile-Time Vetting in a Freestanding Evaluation Domain.}
 
 The following concept makes sure that the `class T' is vetted by the domain. Such properties are called `Vettable' such program in the domain makes sure that a `Container' is truly deemed fit for a Run-Time or Compile-Time Evaluation Domain. The `Vettable' structure makes use of template meta-programming in C++ to evaluate whether a `Container' shall be vetted. Such system may look as such in a Compile-Time Evaluation Domain:
 
@@ -156,7 +154,7 @@ concept IsVettable = requires(Type) {
 };
 
 /// This structure is vettable.
-struct UnVettable {
+struct Vettable {
 	NE_VETTABLE;
 };
 
