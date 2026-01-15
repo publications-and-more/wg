@@ -19,3 +19,6 @@
 *.o
 *.out
 Makefile~
+
+.vscode
+.claude
