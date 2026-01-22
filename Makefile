@@ -2,8 +2,9 @@
 # Author: Amlal El Mahrouss
 # Purpose: Generate HTML and PDF papers from LaTex documents.
 
-PDFTEX := pdflatex
-HTTEX := htlatex
+PDFTEX ?= pdflatex
+HTTEX ?= htlatex
+# That one should exist honestly.
 ECHO := @echo
 
 all: html-wg01 html-wg02
