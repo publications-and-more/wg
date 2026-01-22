@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-title: NeKernel Working Group Papers.
-message: NeKernel.org Working Group Papers.
-type: software
+title: NeKernel.org Working Group Papers.
+message: The NeKernel.org Working Group papers.
+type: collection
 authors:
   - given-names: Amlal
     family-names: El Mahrouss
-    email: aelmahrouss@acm.org
+    email: amlal@nekernel.org
 identifiers:
   - type: url
     value: 'https://nekernel.org'
@@ -13,10 +13,10 @@ identifiers:
 repository-code: 'https://github.com/nekernel-org/draft'
 url: 'https://nekernel.org'
 abstract: >-
-  Working Group Papers of NeKernel.org
+  Working Group Papers of NeKernel.org, authored by Amlal El Mahrouss.
 keywords:
-  - os
-  - cpp
+  - cs
   - systems
+  - os
   - pl
 license: Apache-2.0

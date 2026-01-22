@@ -20,7 +20,7 @@ let format = format_of_string "
 \\usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
 
 \\title{%s}
-\\author{John Doe.\\\\example@nekernel.org}
+\\author{John Doe.\\\\john@nekernel.org}
 \\date{\\today}
 
 \\begin{document}

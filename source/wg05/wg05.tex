@@ -1,0 +1,94 @@
+% AUTHOR: Amlal El Mahrouss
+% PURPOSE: WG05: The Execution Semantics: On Axioms, Domains, and Authority.
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\title{The Execution Semantics: On Axioms, Domains, and Authority.}
+\author{Amlal El Mahrouss\\
+\texttt{amlal@nekernel.org}}
+\date{January 2026}
+
+\begin{document}
+
+\bf \maketitle
+
+\begin{center}
+	\rule[1cm]{17cm}{0.01cm}
+\end{center}
+
+\begin{abstract}
+This paper presents a foundational framework for execution semantics, consisting of three interconnected theories: the General Harvard Separation Axiom, Execution Domains Theory, and Execution Authority Theory. Together, these establish execution as a primitive concept that cannot be derived from computational models, define boundaries for execution semantics and resource visibility, and formalize the authority governing execution contexts.
+\end{abstract}
+
+\begin{center}
+	\rule[1cm]{17cm}{0.01cm}
+\end{center}
+
+\section{The General Harvard Separation Axiom}
+
+Let $G$ be a theory that formally defines execution semantics (domains, contexts, authority). Let $O$ be any theory of computational behavior.
+
+\subsection{Properties}
+
+\begin{itemize}
+    \item If $O$ models computation, then $O$ requires execution to occur.
+    \item Therefore $O$ implicitly depends on $G$'s primitives (execution must be defined for computation to be theorized).
+    \item $G$ does not depend on $O$ (execution semantics are primitive, not derived from computational models).
+\end{itemize}
+
+\subsection{Conclusion}
+
+We cannot derive $G$ from $O$ without circularity:
+\begin{itemize}
+    \item Deriving execution semantics from $O$ would mean ``execution depends on a theory that assumes execution exists.''
+    \item This creates an impossible circular dependency.
+    \item Therefore $G$ must be \textbf{axiomatic}—a foundational primitive that cannot be reduced to other computational theories.
+\end{itemize}
+
+Any attempt to make $G = O$ or $G \subseteq O$ fails because $O$ already assumes $G$'s primitives exist.
+
+\section{Execution Domains Theory}
+
+\subsection{Abstract}
+
+An execution domain defines a boundary for execution semantics, resource visibility, and control flow.
+
+Let $C$ denote an execution domain in an execution context $E$. Let $D$ be of the same type as $C$ but of a different execution context.
+
+\subsection{Properties}
+
+\begin{itemize}
+    \item $C$ shall not be equal to $D$, as $C$ has a different execution context than $D$.
+    \item $C$ may be composed of sub-programs within the execution context $E$.
+\end{itemize}
+
+\subsection{On Execution Contexts}
+
+Execution contexts are treated as abstract semantic parameters, and execution domains as abstract structures indexed by those parameters.
+
+\section{Execution Authority Theory}
+
+\subsection{Abstract}
+
+An execution domain is defined as previously stated in Section~2. An execution authority is responsible for defining whose semantics may be used for an execution context.
+
+A \emph{trait} is a set of formal rules defining the semantic concepts of an execution context.
+
+Let $A$ be an execution authority of type $T$, where $T$ is a trait of an execution context.
+
+\subsection{Properties}
+
+Let $C$ denote an execution domain in an execution context $E$. Let $Z$ denote an execution domain in an execution context $X$.
+
+\begin{itemize}
+    \item If $X$ does not equal or is not semantically substitutable with $E$—or vice versa—then $C$ shall not equal $Z$.
+    \item If $Z$ or $C$ are defined as a null execution context, then the said context—defined as $N$—is not equal to $\lnot N$.
+\end{itemize}
+
+\end{document}

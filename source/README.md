@@ -10,4 +10,5 @@
 - WG02: `Systems Group`.
 - WG03: `Compiler Design Group`.
 - WG04-SPACE-RF: `Distributed Systems Group`.
+- WG05: `Execution Semantics Group`.
 

@@ -55,10 +55,14 @@ And some of them, such as EKA2 use the C++ programming language. Although notori
 This is why most production-grade software (Linux, XNU, and NT) are mostly written in C. With a higher-level subset in C++. However, when correctly applying the following principles to freestanding development, it becomes much easier to ensure correctness of such programs.
 }
 
+\begin{center}
+	\rule[1cm]{17cm}{0.01cm}
+\end{center}
+
 \section{The Three Principles of Freestanding Development.}
 \subsection{I: The Run-Time Evaluation Domain.}
 {
-The problem lies in the programming language runtime, which assumes an existing host. The contrary of a hosted environment is freestanding, a computing mode which doesn't expect a hosted runtime. Such programs may use the compile-time evaluation domain to achieve minimal run-time domain usage.
+The problem lies in the programming language runtime—which assumes an existing host. The contrary of a hosted environment is freestanding—a computing mode which doesn't expect a hosted runtime. Such programs may use the compile-time evaluation domain to achieve minimal run-time domain usage.
 }
 
 \subsection{II: The Compile-Time Evaluation Domain.}
