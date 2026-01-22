@@ -7,8 +7,14 @@ HTTEX ?= htlatex
 # That one should exist honestly.
 ECHO := @echo
 
-all: html-wg01 html-wg02
+.PHONY: all
+all: html-wg05 html-wg01 html-wg02
 	$(ECHO) "=> Done building Tex files."
+
+.PHONY: html-wg05
+html-wg05:
+	$(HTTEX) source/wg05/wg05.tex
+	$(PDFTEX) source/wg05/wg05.tex
 
 .PHONY: html-wg01
 html-wg01:
