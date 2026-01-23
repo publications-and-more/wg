@@ -1,11 +1,12 @@
 (*
         File: mktex.ml
         Purpose: Builds a paper template for LaTeX.
-	Copyright 2025, Amlal El Mahrouss & NeKernel.org Authors.
-	Licensed under Apache 2.0.
+	      Copyright 2025-2026, Amlal El Mahrouss & NeKernel.org Authors.
+	      Licensed under Apache 2.0.
 *)
 
 open Stdlib
+open Out_channel
 open Printf
 
 let title_index : int = 2
