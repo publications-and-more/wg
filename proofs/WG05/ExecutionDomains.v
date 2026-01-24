@@ -8,8 +8,8 @@
   Formalization: January 2026
 *)
 
-Require Import Stdlib.Logic.Classical_Prop.
-Require Import Stdlib.Logic.FunctionalExtensionality.
+Require Import Logic.Classical_Prop.
+Require Import Logic.FunctionalExtensionality.
 
 (** * Execution Contexts *)
 

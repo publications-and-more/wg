@@ -8,7 +8,7 @@
   Formalization: January 2026
 *)
 
-Require Import Stdlib.Logic.Classical_Prop.
+Require Import Logic.Classical_Prop.
 Require Import WG05.ExecutionDomains.
 
 (** * Traits *)
