@@ -50,7 +50,7 @@
 
 \abstract
 {
-	Nectar as presented in its Primer is a systems compiled programming language—designed for low-level systems programming with high-level abstractions.
+	Nectar as presented in its primer is a systems compiled programming language—designed for low-level systems programming with high-level abstractions.
 	It is statically typed—compiled, and supports programming paradigms such as generic programming—and procedural programming.
 }
 
@@ -58,7 +58,7 @@
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
-\section{Getting Started: The 'Hello World' program.}
+\section{The 'Hello World' program.}
 
 Let a program $P$ be:
 
@@ -67,16 +67,28 @@ extern printf;
 
 const main()
 {
-    const writen := printf("%s:13", "Hello, world!\n");
+    const written := printf("%s:13", "Hello, world!\n");
     return written;
 }
+\end{lstlisting} $P$ shall print:
+
+\begin{lstlisting}
+$ Hello, world!
 \end{lstlisting}
+ And return $written$ upon completion. 
+A program $\Theta$ may be noted as:
+
+\begin{equation}
+	\Theta(x) = \lambda x.(P(x))
+\end{equation} Where $P(x)$ is $P$ with an argument of $x$.
 
 \section{References}
 
 \begin{enumerate}
     \item NeKernel.org (2026), \href{https://nekernel.org/nekernel}{https://nekernel.org}
     \item El Mahrouss, A. (2026). The Execution Semantics: On Axioms, Domains, and Authority. (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18362375
+	\item El Mahrouss, A. (2026). The Mathematics of Execution. Zenodo. \\https://doi.org/10.5281/zenodo.18399140
+	\item Church, A. (1936). An Unsolvable Problem of Elementary Number Theory. American Journal of Mathematics, 58(2), 345–363. https://doi.org/10.2307/2371045
 \end{enumerate}
 
 \end{document}
