@@ -25,6 +25,7 @@
 \begin{center}
 \begin{abstract}
 This paper covers the algebraic properties and concepts of `The Execution Semantics' paper by El Mahrouss, A (2026). It is intended as an additional resource over the aforementioned paper.
+We will define their concepts alongside their properties. We assume the reader has read the previous paper on 'The Execution Semantics' by El Mahrouss, A.
 \end{abstract}
 \end{center}
 
@@ -34,16 +35,19 @@ This paper covers the algebraic properties and concepts of `The Execution Semant
 
 \section{The Execution Product}
 
-Let $\Gamma(x, y, z)$ be an Execution Product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $E$: \\
-Let the index $\alpha$ denote the current execution domain of an execution product.\\
-The following formula: 
-$\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+C$. Is defined as the execution product. Where $C$ is the Unknown Execution of $\Gamma(x, y, z)$—now defined as $g(E)$.
+Let $\Gamma(x, y, z)$ be an execution product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $E$: \\
+Let the index $\alpha$ denote the current execution domain of an execution product.
+Let the following formula:
+\begin{equation}
+\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+C.    
+\end{equation}
+ Be defined as the execution product. Where $C$ is the Unknown Execution of $\Gamma(x, y, z)$—now defined as $g(E)$.
 
 \subsection{Properties}
 
 \begin{enumerate}
 
-    \item $\Gamma$ as defined previously as the `Execution Product' shall always be valid within the execution context $E$.
+    \item $\Gamma$ as defined previously as the `execution product' shall always be valid within the execution context $E$.
 
     \item The execution context $E$ shall not denote $\varnothing$.
 
@@ -65,7 +69,7 @@ Let $N$ be defined as $\varnothing$.
 
 \section{Conclusion}
 
-Such Concepts and Properties are essential for `Execution Theory' formality as per defined in El Mahrouss, A. paper.
+Such Concepts and properties are essential for `Execution Theory''s formality as per defined in El Mahrouss, A. paper.
 
 \section{References}
 
