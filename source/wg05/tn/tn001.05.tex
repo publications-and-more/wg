@@ -19,7 +19,7 @@
 \bf \maketitle
 
 \begin{center}
-	\rule[1cm]{17cm}{0.01cm}
+	\rule[0.01cm]{17cm}{0.01cm}
 \end{center}
 
 \begin{center}
@@ -34,23 +34,38 @@ This paper covers the algebraic properties and concepts of `The Execution Semant
 
 \section{The Execution Product}
 
-Let $F(x, y, z)$ be an Execution Product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $E$: \\
-Let the index $\alpha$ denote the current execution domain of an execution product.\\ 
-$F(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+C$. Where $C$ is the Unknown Execution of $F(x, y, z)$—now defined as $g(E)$.
-
-\section{The Unknown Execution Property}
-
-Let an `Unknown Execution' $U$ be defined regarding an execution product $F$ \\
-Let `Null' be defined as $\varnothing$.
+Let $\Gamma(x, y, z)$ be an Execution Product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $E$: \\
+Let the index $\alpha$ denote the current execution domain of an execution product.\\
+The following formula: 
+$\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+C$. Is defined as the execution product. Where $C$ is the Unknown Execution of $\Gamma(x, y, z)$—now defined as $g(E)$.
 
 \subsection{Properties}
 
 \begin{enumerate}
 
-    \item $U$ shall not be equal to Null.
-    \item The execution domain of $F$ shall not be Null.
+    \item $\Gamma$ as defined previously as the `Execution Product' shall always be valid within the execution context $E$.
+
+    \item The execution context $E$ shall not denote $\varnothing$.
 
 \end{enumerate}
+
+\section{The Unknown Execution}
+
+Let an `Unknown Execution' $U$ be defined regarding an execution product $\Gamma$ \\
+Let $N$ be defined as $\varnothing$.
+
+\subsection{Properties}
+
+\begin{enumerate}
+
+    \item $U$ shall not be equal to $N$.
+    \item The execution domain of $\Gamma$ shall not be $N$.
+
+\end{enumerate}
+
+\section{Conclusion}
+
+Such Concepts and Properties are essential for `Execution Theory' formality as per defined in El Mahrouss, A. paper.
 
 \section{References}
 
