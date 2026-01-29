@@ -58,7 +58,7 @@
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
-\section{The 'Hello World' program.}
+\section{The 'Hello World' Program.}
 
 Let a program $P$ be:
 
@@ -70,13 +70,11 @@ const main()
     const written := printf("%s:13", "Hello, world!\n");
     return written;
 }
-\end{lstlisting} $P$ shall print:
+\end{lstlisting} $P$ shall execute:
 
 \begin{lstlisting}
 $ Hello, world!
-\end{lstlisting}
- And return $written$ upon completion. 
-A program $\Theta$ may be noted as:
+\end{lstlisting} And return $written$, now defined as $W$, upon completion. Such program that we denote as $\Theta$ may be noted as:
 
 \begin{equation}
 	\Theta(x) = \lambda x.(P(x))
@@ -85,8 +83,9 @@ A program $\Theta$ may be noted as:
 \section{References}
 
 \begin{enumerate}
-    \item NeKernel.org (2026), \href{https://nekernel.org/nekernel}{https://nekernel.org}
-    \item El Mahrouss, A. (2026). The Execution Semantics: On Axioms, Domains, and Authority. (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18362375
+  \item NeKernel.org (2026), \href{https://nekernel.org/nekernel}{https://nekernel.org}
+  \item NeKernel.org Primer (2026), \href{https://nekernel.org/nectar\_primer.html}{https://nekernel.org/nectar\_primer.html}
+  \item El Mahrouss, A. (2026). The Execution Semantics: On Axioms, Domains, and Authority. (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18362375
 	\item El Mahrouss, A. (2026). The Mathematics of Execution. Zenodo. \\https://doi.org/10.5281/zenodo.18399140
 	\item Church, A. (1936). An Unsolvable Problem of Elementary Number Theory. American Journal of Mathematics, 58(2), 345–363. https://doi.org/10.2307/2371045
 \end{enumerate}
