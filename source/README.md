@@ -8,7 +8,7 @@
 
 - WG01: `PL/OS Group`.
 - WG02: `Systems Group`.
-- WG03: `Compiler Design Group`.
+- WG03: `Nectar Group`.
 - WG04-SPACE-RF: `Distributed Systems Group`.
-- WG05: `Execution Semantics Theory Group`.
+- WG05: `Execution Theory Group`.
 
