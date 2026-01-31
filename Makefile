@@ -8,13 +8,22 @@ PDFTEX ?= pdflatex
 HTMLTEX ?= htlatex
 ECHO := @echo
 
+.PHONY: all
+all: clean
+	ECHO "Cleanup is done."
+
+.PHONY: clean
+clean:
+	@rm -rf *.4ct *.4tc *.aux *.css *.pdf *.html *.tmp *.dvi *.idv *.lg *.log *.xref *.out *.png
+
 include wg01.mk
 include wg02.mk
 include wg03.mk
 
 .PHONY: wg05
-wg05:
+wg05: clean
 	$(HTMLTEX) source/wg05/paper.tex
 	$(PDFTEX) source/wg05/paper.tex
+
 	$(HTMLTEX) source/wg05/tn001.05/paper.tex
 	$(PDFTEX) source/wg05/tn001.05/paper.tex

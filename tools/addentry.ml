@@ -15,11 +15,8 @@ let file_index : int = 1
 let format = format_of_string
   "
 
-PDFTEX ?= pdflatex
-HTMLTEX ?= htlatex
-
 .PHONY: %s
-%s:
+%s: clean
 	$(HTMLTEX) source/%s/paper.tex
 	$(PDFTEX) source/%s/paper.tex
 "

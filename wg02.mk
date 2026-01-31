@@ -5,7 +5,7 @@
 # Licensed under Apache 2.0.
 
 .PHONY: wg02
-wg02:
+wg02: clean
 	$(HTMLTEX) source/wg02/paper.tex
 	$(PDFTEX) source/wg02/paper.tex
 
