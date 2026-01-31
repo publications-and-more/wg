@@ -8,10 +8,6 @@ PDFTEX ?= pdflatex
 HTMLTEX ?= htlatex
 ECHO := @echo
 
-.PHONY: all
-all: wg05 wg01 wg02 wg03
-	$(ECHO) "=> Done building Tex files."
-
 include wg01.mk
 include wg02.mk
 include wg03.mk
