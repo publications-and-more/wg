@@ -19,11 +19,4 @@ clean:
 include wg01.mk
 include wg02.mk
 include wg03.mk
-
-.PHONY: wg05
-wg05: clean
-	$(HTMLTEX) source/wg05/paper.tex
-	$(PDFTEX) source/wg05/paper.tex
-
-	$(HTMLTEX) source/wg05/tn001.05/paper.tex
-	$(PDFTEX) source/wg05/tn001.05/paper.tex
+include wg05.mk
