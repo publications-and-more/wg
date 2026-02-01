@@ -1,5 +1,5 @@
 % AUTHOR: Amlal El Mahrouss
-% PURPOSE: WG03: The Nectar Programming Language.
+% PURPOSE: WG03: Design of the Nectar Programming Language.
 
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
@@ -10,7 +10,7 @@
 
 \title{Design of the Nectar Programming Language.}
 \author{Amlal El Mahrouss\\\texttt{amlal@nekernel.org}}
-\date{January 2026}
+\date{February 2026}
 
 \definecolor{codegray}{gray}{0.95}
 \definecolor{codeblue}{rgb}{0.1,0.1,0.8}
@@ -50,15 +50,15 @@
 
 \abstract
 {
-	Nectar as presented in its primer is a systems compiled programming language—designed for low-level systems programming with high-level abstractions.
-	It is statically typed—compiled, and supports programming paradigms such as generic programming—and procedural programming.
+	Nectar as presented in its primer—is a compiled programming language—designed for systems programming with high-level abstractions.
+	It is statically typed—compiled, and supports multi-paradigm programming.
 }
 
 \begin{center}
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
-\section{The 'Hello World' Program.}
+\section{Definition of a Program}
 
 Let a program $P$ be:
 
@@ -79,6 +79,13 @@ $ Hello, world!
 \begin{equation}
 	\Theta(x) = \lambda x.(P(x))
 \end{equation} Where $P(x)$ is $P$ with an argument of $x$. \\ Let $\Theta(x)$ be defined as the $\lambda$-Execution of a program $P$.
+
+\section{Definitions}
+
+	\item Nectar: A compiled systems programming language—currently studied in this paper.
+	\item $\lambda$-Execution: Formally defined as: $\Theta(x) = \lambda x.(P(x))$.
+	\item $W$: The return variant—an $\lambda$-Execution variable based on the $\lambda$-Execution result.
+
 \section{References}
 
 \begin{enumerate}
@@ -88,11 +95,5 @@ $ Hello, world!
 	\item El Mahrouss, A. (2026). The Mathematics of Execution. Zenodo. \\https://doi.org/10.5281/zenodo.18399140
 	\item Church, A. (1936). An Unsolvable Problem of Elementary Number Theory. American Journal of Mathematics, 58(2), 345–363. https://doi.org/10.2307/2371045
 \end{enumerate}
-
-\section{Definitions}
-
-	\item Nectar: A compiled systems programming language—currently studied in this paper.
-	\item $\lambda$-Execution: Formally defined as: $\Theta(x) = \lambda x.(P(x))$.
-	\item $W$: The return variant—an $\lambda$-Execution variable based on the $\lambda$-Execution result.
 
 \end{document}
