@@ -8,7 +8,7 @@
   Formalization: January 2026
 *)
 
-From Stdlib Require Import Logic.Classical_Prop.
+From Coq Require Import Logic.Classical_Prop.
 Require Import WG05.ExecutionDomains.
 
 (** * Traits *)
@@ -165,5 +165,7 @@ Proof.
   - apply H23. apply H12. exact H.
   - apply H12. apply H23. exact H.
 Qed.
+
+Print authorities_agree_trans.
 
 End AdditionalProperties.
