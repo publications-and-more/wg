@@ -166,6 +166,4 @@ Proof.
   - apply H12. apply H23. exact H.
 Qed.
 
-Print authorities_agree_trans.
-
 End AdditionalProperties.
