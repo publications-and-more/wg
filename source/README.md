@@ -12,8 +12,7 @@
 - WG04-SPACE-RF: `The Distributed Systems Group`.
 - WG05: `The Execution Theory Group`.
 
-## Active DN Groups:
+## Active Paper Groups:
 
-- WG001: `The Mathematics of Execution.`
-- WG002: `The C Index Property.`
-
+- DN001: `The Mathematics of Execution.`
+- DN002: `The C Index Property.`
