@@ -33,47 +33,47 @@ We will define their concepts alongside their properties. We assume the reader h
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
-\section{The Execution Product}
+\section{The Execution Product Formula}
 
-Let $\Gamma(x, y, z)$ be an execution product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $E$: \\
+Let $\Gamma(x, y, z)$ be an execution product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $\mathbb{E}$. \\
 Let the index $\alpha$ denote the current execution domain of an execution product.
-\\ Let the following formula:
+\\ \\ Consider the following formula:
 \begin{equation}
-\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+C    
+\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+\mathbb{U}  
 \end{equation}
- Be defined as the execution product. Where $C$ is the Unknown Execution of $\Gamma(x, y, z)$—now defined as $g(E)$.
+which we define as the execution product, where $\mathbb{U}$ is the Unknown Execution of $\Gamma(x, y, z)$, now defined as $g(\mathbb{E})$.
 
-\subsection{Properties}
+\subsection{Properties of $\Gamma$}
 
 \begin{enumerate}
 
-    \item $\Gamma$ as defined previously as the `execution product' shall always be valid within the execution context $E$.
-    \item The execution context $E$ shall not denote $\varnothing$.
+    \item $\Gamma$ as defined previously as the `execution product' shall always be valid within the execution context $\mathbb{E}$.
+    \item The execution context $\mathbb{E}$ shall not denote $\varnothing$.
 
 \end{enumerate}
 
-\section{The Unknown Execution}
+\section{The Unknown Execution Property $\mathbb{U}$}
 
-Let an `Unknown Execution' $U$ be defined regarding an execution product $\Gamma$. \\
-Let $N$ be defined as $\varnothing$.
+Let $\mathbb{U} \in \Gamma$ be the `Unknown Execution' as $\mathbb{U} = g(\mathbb{E})$.\\
+Let $\mathbb{V} = \varnothing$ denote the `Empty Execution', with $\mathbb{V} \notin \Gamma$.
 
-\subsection{Properties}
+\subsection{Properties of $\mathbb{U}$}
 
 \begin{enumerate}
 
-    \item $U$ shall not be equal to $N$.
-    \item The execution domain of $\Gamma$ shall not be $N$.
+    \item $\mathbb{U}$ shall not be equal to $\mathbb{V}$.
+    \item The Execution Domain of $\Gamma$ shall not be equal to $\mathbb{V}$.
 
 \end{enumerate}
 
 \section{Conclusion}
 
-Such properties are essential to define `Execution Theory''s as a mathematical construct as per defined in El Mahrouss, A.' paper. 
+Such properties are essential to define Execution Theory as a mathematical construct, as presented in El Mahrouss, A. (2026).
 
 \section{References}
 
 \begin{enumerate}
-    \item El Mahrouss, A. (2026). The Execution Semantics: On Axioms, Domains, and Authority. (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.18366611
+    \item El Mahrouss, A. (2026). The Execution Semantics: On Axioms, Domains, and Authority. Zenodo. https://doi.org/10.5281/zenodo.18470651
 \end{enumerate}
 
 \end{document}

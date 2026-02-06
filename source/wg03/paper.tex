@@ -4,6 +4,7 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
@@ -58,9 +59,9 @@
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
-\section{Definition of a Program}
+\section{Definition of the $\lambda$-Execution}
 
-Let a program $P$ be:
+Let a program $\mathbb{P}$ be:
 
 \begin{lstlisting}
 extern printf;
@@ -70,21 +71,28 @@ const main()
     const written := printf("%s:13", "Hello, world!\n");
     return written;
 }
-\end{lstlisting} $P$ shall execute:
+\end{lstlisting} 
+$\mathbb{P}$ shall execute:
 
 \begin{lstlisting}
 $ Hello, world!
-\end{lstlisting} And return variant $written$, now defined as $W$, upon completion. Such program that we denote as $\Theta$ may be defined as:
+\end{lstlisting}
+and return variant $written$, now defined as $\mathbb{W}$, upon completion. Such program that we denote as $\Theta$ may be defined as:
 
 \begin{equation}
 	\Theta(x) = \lambda x.(P(x))
-\end{equation} Where $P(x)$ is $P$ with an argument of $x$. \\ Let $\Theta(x)$ be defined as the $\lambda$-Execution of a program $P$.
+\end{equation}
+where $P(x) = \mathbb{P}$ with an argument of $x$. \\ Let $\Theta(x)$ be defined as the $\lambda$-Execution of a program $\mathbb{P}$.
 
 \section{Definitions}
 
 	\item Nectar: A compiled systems programming language—currently studied in this paper.
 	\item $\lambda$-Execution: Formally defined as: $\Theta(x) = \lambda x.(P(x))$.
-	\item $W$: The return variant—an $\lambda$-Execution variable based on the $\lambda$-Execution result.
+	\item $\mathbb{W}$: The return variant—an $\lambda$-Execution variable based on the $\lambda$-Execution result.
+
+\section{Conclusion}
+
+
 
 \section{References}
 
