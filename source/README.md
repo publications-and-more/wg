@@ -9,7 +9,7 @@
 - WG01: `The PL/OS Group`.
 - WG02: `The Systems Group`.
 - WG03: `The Nectar PL Group`.
-- WG04-SPACE-RF: `The Mathematics Group`.
+- WG04: `The Mathematics Group`.
 - WG05: `The Execution Theory Group`.
 
 ## Active Paper Groups:
