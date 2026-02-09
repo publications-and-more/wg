@@ -51,26 +51,66 @@
 
 \abstract
 {
-	This technical note defines useful integrals to be used in the case of calculus. The formulas have been kept abstract for the sole purpose of flexibility.
+	This technical note defines useful primitives to be used in the case of calculus. The formulas have been kept abstract for the sole purpose of flexibility.
 }
 
 \begin{center}
 	\rule[1cm]{17cm}{0.01cm}
 \end{center}
 
+\section{Introduction}
+
+We will define alongside this paper useful primitives in order to complete analysis in a mathematical manner. 
+
 \section{Definitions}
+
+Let the following definitions be used in mathematical analysis:
 
 \subsection{Definition of a sum of an integral from $a_{0}$ to $a_{n}$}
 
-Let an integral $\alpha$:
+Let an integral $\alpha$ be defined:
 \begin{equation}
     \int_{a_{0}}^{a_{n}}\sum_{b_{a_{0}},k=a_{0}} f_{b_{a_{0}}}(S(k+b_{a_{0}})) + C
 \end{equation}
-Such that
+Such that:
 \begin{equation}
-    a = 0, \quad a \in \mathbb{N}, \quad k \neq 0, \quad k \in \mathbb{R}
+    a \geq 0, \quad a \in \mathbb{N}, \quad k \neq 0, \quad k \in \mathbb{R}
 \end{equation}
-Such that $S$ is a user-defined function computing a sum of $k-b_{a_{0}}$.
+Such that $S$ is a user-defined computing function of a sum $k+b_{a_{0}}$.
+
+\subsection{Definition of Ze in $\mathbb{R}$}
+
+Let an equation $Ze$ be defined:
+
+\begin{equation}
+	\forall t \in \mathbb{R}, \quad t_{n} = Ze_{n}(\Delta t)
+\end{equation}
+Such that:
+\begin{equation}
+	n \geq 0, \quad n \in \mathbb{N}
+\end{equation}
+Such that:
+\begin{equation}
+	\Delta t \geq n, \quad \Delta t \in \mathbb{C}
+\end{equation}
+Such that $Ze_{n}$ be the current yield result of $t_{n} \in \Delta t$.
+
+\section{Properties}
+
+Let the following properties be used in mathematical analysis:
+
+\subsection{Properties of $\Delta t$}
+
+Let the properties be:
+
+\begin{itemize}
+    \item $\Delta t \in \mathbb{C}, \quad \forall x \in \Delta t$
+\end{itemize}
+
+
+\section{Conclusion}
+
+We have defined two primitives and one property in order to help us analyse mathematical domains within $\mathbb{R}$ or $\mathbb{C}$.
 
 \end{document}
 

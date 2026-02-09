@@ -19,4 +19,5 @@ clean:
 include wg01.mk
 include wg02.mk
 include wg03.mk
+include wg04.mk
 include wg05.mk
