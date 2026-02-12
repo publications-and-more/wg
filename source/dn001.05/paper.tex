@@ -36,10 +36,10 @@ We will define their concepts alongside their properties. We assume the reader h
 \section{The Execution Product Formula}
 
 Let $\Gamma(x, y, z)$ be an execution product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $\mathbb{E}$. \\
-Let the index $\alpha$ denote the current execution domain of an execution product.
+Let the index $i$ denote the current execution domain of an execution product.
 \\ \\ Consider the following formula:
 \begin{equation}
-\Gamma(x, y, z) = \prod_{\alpha=1}^{n}(x_{\alpha} \times y_{\alpha} \times z_{\alpha})+\mathbb{U}  
+\Gamma(x, y, z) = \prod_{i=1}^{n}(x_{i} \times y_{i} \times z_{i})+\mathbb{U}
 \end{equation}
 which we define as the execution product, where $\mathbb{U}$ is the Unknown Execution of $\Gamma(x, y, z)$, now defined as $g(\mathbb{E})$.
 

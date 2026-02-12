@@ -13,34 +13,6 @@
 \author{Amlal El Mahrouss\\\texttt{amlal@nekernel.org}}
 \date{February 2026}
 
-\definecolor{codegray}{gray}{0.95}
-\definecolor{codeblue}{rgb}{0.1,0.1,0.8}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-
-\lstset{
-	language=C++,
-	backgroundcolor=\color{codegray},
-	basicstyle=\footnotesize\ttfamily,
-	keywordstyle=\color{codeblue}\bfseries,
-	commentstyle=\color{codegreen},
-	stringstyle=\color{codepurple},
-	numbers=left,
-	numberstyle=\tiny\color{gray},
-	stepnumber=1,
-	numbersep=5pt,
-	breaklines=true,
-	breakatwhitespace=false,
-	frame=single,
-	rulecolor=\color{black},
-	captionpos=b,
-	keepspaces=true,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=2
-}
-
 \begin{document}
 
 \bf \maketitle
@@ -51,7 +23,7 @@
 
 \abstract
 {
-	This technical note defines useful primitives to be used in the case of calculus. The formulas have been kept abstract for the sole purpose of flexibility.
+	This paper defines, and documents useful primitives to be used in the case of calculus. Them shall been kept abstract for the sole purpose of flexibility.
 }
 
 \begin{center}
@@ -60,7 +32,8 @@
 
 \section{Introduction}
 
-We will define alongside this paper useful primitives in order to complete analysis in a mathematical manner. 
+We will define in this paper useful primitives in order to complete analysis in a mathematical manner.\\
+It will contain definitions and properties in a top-to-bottom order.
 
 \section{Definitions}
 
@@ -70,30 +43,40 @@ Let the following definitions be used in mathematical analysis:
 
 Let an integral $\alpha$ be defined:
 \begin{equation}
-    \int_{a_{0}}^{a_{n}}\sum_{b_{a_{0}},k=a_{0}} f_{b_{a_{0}}}(S(k+b_{a_{0}})) + C
+    \sum_{k=1}^{a_{n}} \int_{a_{0}}^{a_{n}} f_{k}(S(b_{a_{0}})) + C, \quad b_{a_{0}} > 0, \quad b_{a_{0}} \in \mathbb{R}
 \end{equation}
 Such that:
 \begin{equation}
-    a \geq 0, \quad a \in \mathbb{N}, \quad k \neq 0, \quad k \in \mathbb{R}
+    a > 0, \quad a \in \mathbb{R}, \quad k \neq 0, \quad k \in \mathbb{R}
 \end{equation}
-Such that $S$ is a user-defined computing function of a sum $k+b_{a_{0}}$.
+Such that $S$ is a user-defined computing function of a sum $b_{a_{0}}$.
 
 \subsection{Definition of Ze in $\mathbb{R}$}
 
 Let an equation $Ze$ be defined:
 
 \begin{equation}
-	\forall t \in \mathbb{R}, \quad t_{n} = Ze_{n}(\Delta t)
+	\forall t \in \mathbb{R}, \quad t = Ze_{n}(\Delta t_{n})
 \end{equation}
 Such that:
 \begin{equation}
-	n \geq 0, \quad n \in \mathbb{N}
+	n \geq 0, \quad n \in \mathbb{R}
 \end{equation}
 Such that:
 \begin{equation}
 	\lvert \Delta t \rvert \geq n, \quad \Delta t \in \mathbb{C}
 \end{equation}
 Such that $Ze_{n}$ be the current yield result of $t_{n} \in \Delta t$.
+
+\subsection{Definition of $Ke(k, u, n)$}
+
+Let $Ke(k, u, n)$:
+
+\begin{equation}
+	Ke(k, u, n)=\int_{k}^{n} \Phi_{k}(u) + C, \quad \forall k, n \in \mathbb{R}, \quad k \geq 0
+\end{equation}
+Such that $Ke(k, u, n)$ for $z \in \mathbb{R}$. \\
+Such that $\Phi_{k}(u)$ is the analysis function where $\Phi_{k}(u) \in \mathbb{C}$ if and only if $u \in \mathbb{R}, \quad u > 0$.
 
 \section{Properties}
 
@@ -104,13 +87,8 @@ Let the following properties be used in mathematical analysis:
 Let the properties be:
 
 \begin{itemize}
-    \item $\Delta t \in \mathbb{C}, \quad \forall x \in \Delta t$
+    \item $\Delta t \in \mathbb{C}, \quad \forall x \in \Delta t, \quad x \in \mathbb{C}$
 \end{itemize}
-
-
-\section{Conclusion}
-
-We have defined two primitives and one property in order to help us analyse mathematical domains within $\mathbb{R}$ or $\mathbb{C}$.
 
 \end{document}
 
