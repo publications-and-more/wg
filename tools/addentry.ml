@@ -34,4 +34,4 @@ let () =
   else (
     printf "addentry: Add paper Makefile entry.\n";
     printf "addentry: usage: <file_index> <paper_name_index>\n"
-  )
+  );;

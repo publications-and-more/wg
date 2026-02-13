@@ -56,4 +56,4 @@ let () = if Array.length Sys.argv >= 5 then
   else (
     printf "addpaper: Creates papers for TeX.\n";
     printf "addpaper: usage: <file_name> <document_title>\n"
-  );
+  );;
