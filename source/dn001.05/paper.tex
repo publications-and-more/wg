@@ -35,34 +35,34 @@ We will define their concepts alongside their properties. We assume the reader h
 
 \section{The Execution Product Formula}
 
-Let $\Gamma(x, y, ..., z)$ be an execution product of variable arguments $x$, $y$, $z$ defined in compatible and composable execution context $\mathbb{E}$. \\
+Let $Pe(x, ..., z)$ be an execution product of variable arguments $x$, $...$, to $z$ defined in compatible and composable execution context $\mathbb{E}$. \\
 Let the index $i$ denote the current execution domain of an execution product.
 \\ \\ Consider the following formula:
 \begin{equation}
-\Gamma(x, y, ..., z) = \prod_{i=1}^{n}(x_{i} \times y_{i} \times ... \times z_{i})+\mathbb{U}
+Pe(x, ..., z) = \prod_{i=1}^{n}(x_{i} \times ... \times z_{i})+\mathbb{U}
 \end{equation}
-In which we define as the execution product, where $\mathbb{U}$ is the Unknown Execution of $\Gamma(x, y, ..., z)$, now defined as $g(\mathbb{E})$.
+In which we define as the execution product, where $\mathbb{U}$ is the Unknown Execution of $Pe(x, ..., z)$, now defined as $g(\mathbb{E})$.
 
-\subsection{Properties of $\Gamma$}
+\subsection{Properties of $Pe$}
 
 \begin{enumerate}
 
-    \item $\Gamma$ as defined previously as the `execution product' shall always be valid within the execution context $\mathbb{E}$.
+    \item $Pe$ as defined previously as the `execution product' shall always be valid within the execution context $\mathbb{E}$.
     \item The execution context $\mathbb{E}$ shall not denote $\varnothing$.
 
 \end{enumerate}
 
 \section{The Unknown Execution Property $\mathbb{U}$}
 
-Let $\mathbb{U} \in \Gamma$ be the `Unknown Execution' as $\mathbb{U} = g(\mathbb{E})$.\\
-Let $\mathbb{V} = \varnothing$ denote the `Empty Execution', with $\mathbb{V} \notin \Gamma$.
+Let $\mathbb{U} \in Pe$ be the `Unknown Execution' as $\mathbb{U} = g(\mathbb{E})$.\\
+Let $\mathbb{V} = \varnothing$ denote the `Empty Execution', with $\mathbb{V} \notin Pe$.
 
 \subsection{Properties of $\mathbb{U}$}
 
 \begin{enumerate}
 
     \item $\mathbb{U}$ shall not be equal to $\mathbb{V}$.
-    \item The Execution Domain of $\Gamma$ shall not be equal to $\mathbb{V}$.
+    \item The Execution Domain of $Pe$ shall not be equal to $\mathbb{V}$.
 
 \end{enumerate}
 
