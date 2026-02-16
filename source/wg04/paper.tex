@@ -7,6 +7,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{mathtools}
 \usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
 
 \title{Integrals and Equations for Analysis.}
@@ -15,58 +16,27 @@
 
 \begin{document}
 
-\bf \maketitle
+\maketitle
 
 \begin{center}
 	\rule[0.01cm]{17cm}{0.01cm}
 \end{center}
 
-\section{Abstract}
+\section{Formulas definitions}
 
-We will introduce in this paper useful primitives in order to help in analysis. We will also define and describe properties in a top-to-bottom order.
-
-\section{Definitions}
-
-Let the following definitions be used in mathematical analysis:
-
-\subsection{A sum of an integral from $a_{0}$ to $a_{n}$}
-
-Let an integral $\alpha$ be defined:
+Let us define four formulas using the definitons below:
+We assume $x \in \mathbb{R}, \quad n \in \mathbb{N}, \quad 0 < k < a < b < 1$
+\subsection{Sum Integral:}
 \begin{equation}
-    \sum_{k=1} \int_{a_{0}}^{a_{n}} f_{k}(S(b_{a_{0}})) \quad db_{a_{0}}, \quad b_{a_{0}} > 0, \quad b_{a_{0}} \in \mathbb{R}
+    I_{1} \coloneqq n \int_{a}^{b} S(x) dx
 \end{equation}
-Such that $a > 0, \quad a \in \mathbb{R}, \quad k \neq 0, \quad k \in \mathbb{Z}$ Such that $S$ is a user-defined computing function of a sum $b_{a_{0}}$
-
-\subsection{An equation Ze in $\mathbb{R}$}
-
-Let an equation $Ze$ be defined as:
-
+\subsection{Sum Formula:}
 \begin{equation}
-	\forall t \in \mathbb{R}, \quad t = Ze_{n}(\Delta t_{n})
+	S(x) \coloneqq \cos(x)\times\sin(x)
 \end{equation}
-Such that $n > 0, \quad n \in \mathbb{R}$ Such that $\lvert \Delta t \rvert \geq n, \quad \Delta t \in \mathbb{C}$ Such that $Ze_{n}$ be the yield result of $t_{n} \in \Delta t$.
-
-\subsection{Definition of an integral $Ke(k, u, n)$}
-
-Let $Ke(k, u, n)$ be defined as:
-
+\subsection{Sum Equation:}
 \begin{equation}
-	Ke(k, u, n)=\int_{k}^{n} \Phi_{k}(u) \quad du, \quad \forall u \in \mathbb{R}, \quad \forall k, n \in \mathbb{Z}, \quad k \geq 0
+	I_{2} \coloneqq \int_{k}^{a} Z(x)dx, \quad  Z(x) := (S(x) \times x)
 \end{equation}
-Such that $Ke(k, u, n)$ for $z \in \mathbb{R}$. \\
-Such that $\Phi_{k}(u)$ is the analysis function where $\Phi_{k}(u) \in \mathbb{C}$ if and only if $u \in \mathbb{R}, \quad u > 0$.
-
-\section{Properties}
-
-Let the following properties be used in mathematical analysis:
-
-\subsection{Properties of $\Delta t$ in $Ze$}
-
-Let the properties be for $Ze$:
-
-\begin{itemize}
-    \item $\Delta t \in \mathbb{C}, \quad \forall x \in \Delta t, \quad x \in \mathbb{C}$
-\end{itemize}
-
 \end{document}
 
