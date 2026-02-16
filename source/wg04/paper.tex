@@ -24,10 +24,10 @@
 
 \section{Definitions}
 
-We assume $x, y, z \in \mathbb{R}, \quad n \in \mathbb{N}, \quad \cos(\pi) < a < b < \cos(0), \quad t = a$
+We assume $x, y, z \in \mathbb{R}, \quad n \in \mathbb{N}, \quad \cos(\pi) < a < b, \quad t = a$
 \subsection{The A-Integral:}
 \begin{equation}
-    I_{1} \coloneqq \sum_{n}^{t} \int_{a}^{b} S(x) dx
+    I_{1} \coloneqq \sum_{n}^{t} \int_{a}^{b} S(x) d \cdot x
 \end{equation}
 \subsection{The A-Function:}
 \begin{equation}
@@ -35,7 +35,15 @@ We assume $x, y, z \in \mathbb{R}, \quad n \in \mathbb{N}, \quad \cos(\pi) < a <
 \end{equation}
 \subsection{The A-Equation:}
 \begin{equation}
-	I_{2} \coloneqq \int_{a}^{b} E_{1}dx, \quad E_{1} = Z(x) := \frac{(S(x) \cdot y)}{\Delta t \cdot z}
+	I_{2} \coloneqq \int_{a}^{b} E_{1}d \cdot x, \quad E_{1} = Z(x) := \frac{(S(x) \cdot y)}{\Delta t \cdot z}
 \end{equation}
+Where $\delta t \in \mathbb{R}$ such that $0 < \delta t$.
+\subsection{The K-Equation:}
+\begin{equation}
+	K_{n}=\int_{a}^{b} S_{k}{t}(u_{n}) \quad d \cdot u_{n}, \quad \forall u_{n} \in \mathbb{R}
+\end{equation}
+Where $K_{n} > 0$ for $z \in \mathbb{R}$. \\
+Where $S_{k}(u)$ is the A-Function where $S_{k}(u) \in \mathbb{C}$ if and only if $u \in \mathbb{R}, \quad u > 0$.
+
 
 \end{document}
