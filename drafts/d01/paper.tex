@@ -1,6 +1,7 @@
 % AUTHOR: Amlal El Mahrouss
 % PURPOSE: D01: The T-Function.
 
+
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -37,9 +38,19 @@ Proof for $\Theta(\Delta t, \Delta\phi) > \frac{\Delta\phi}{\Delta t}$ when $\fo
 \begin{equation}
     \Theta(\Delta t, \Delta\phi) > \frac{\Delta\phi}{{\Delta t}}
 \end{equation}
-Hence $ (\Theta(\Delta t, \Delta\phi) \times \Delta t) < \Delta\phi$
-For every $\Theta(\Delta t, \Delta\phi) \times \Delta t \in \mathbb{C}$, we assign $\ln(e \times i)$ to $\ln (e(i \times t))$, and then assign the result to a variable $y$. And we then multiply by $\Delta t$ from both sides:
-
+Hence
+\begin{equation}
+(\Theta(\Delta t, \Delta\phi) \times \Delta t) < \Delta\phi
+\end{equation}
+Then
+\begin{equation}
+\Theta(\Delta t, \Delta\phi) \times \Delta t \in \mathbb{C}
+\end{equation}
+Then
+\begin{equation}
+y = \ln(e \times i) \to \ln (e(i \times t))
+\end{equation}
+Such that we then multiply $\Delta t$ from both sides:
 \begin{equation}
     y = |\Theta(\Delta t, \Delta\phi) \times \Delta (n \times i)| > \ln (e \times (i \times t))
 \end{equation}
