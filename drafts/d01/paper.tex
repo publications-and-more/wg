@@ -1,0 +1,53 @@
+% AUTHOR: Amlal El Mahrouss
+% PURPOSE: D01: The T-Function.
+
+\documentclass[11pt, a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
+
+\title{The T-Function.}
+\author{Amlal El Mahrouss\\\texttt{amlal@nekernel.org}}
+\date{February 2026}
+
+\begin{document}
+
+\bf \maketitle
+
+\begin{center}
+	\rule[0.01cm]{17cm}{0.01cm}
+\end{center}
+
+\section{Abstract}
+This paper covers a function $\Theta(\Delta t)$, which we will use to solve a set of lemmas in $\mathbb{C}$.
+
+\section{Definitions}
+
+\subsection{Definition of $\Theta(\Delta t)$}
+Let the T-Function:
+$\Theta(\Delta t, \Delta\phi)=\frac{\Delta\phi}{\Delta t}$
+such that $\Theta(\Delta t) \in \mathbb{C}$ if and only if $\Theta(\Delta t, \Delta\phi) > \frac{\Delta\phi}{\Delta t}$
+
+\subsection{Lemma 1}
+
+Proof for $\Theta(\Delta t, \Delta\phi) > \frac{\Delta\phi}{\Delta t}$ when $\forall \Delta t = 4i, \quad \Delta\phi = \ln(e \times i)$ then
+\begin{equation}
+    \Theta(\Delta t, \Delta\phi) > \frac{\Delta\phi}{{\Delta t}}
+\end{equation}
+Hence $ (\Theta(\Delta t, \Delta\phi) \times \Delta t) < \Delta\phi$
+For every $\Theta(\Delta t, \Delta\phi) \times \Delta t \in \mathbb{C}$, we assign $\ln(e \times i)$ to $\ln (e(i \times t))$, and then assign the result to a variable $y$. And we then multiply by $\Delta t$ from both sides:
+
+\begin{equation}
+    y = |\Theta(\Delta t, \Delta\phi) \times \Delta (n \times i)| > \ln (e \times (i \times t))
+\end{equation}
+Hence
+
+\begin{equation}
+    \forall y \in \mathbb{C}, \quad y > \ln(e \times i)
+\end{equation}
+This completes the proof.
+
+\end{document}
