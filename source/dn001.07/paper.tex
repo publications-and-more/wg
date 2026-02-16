@@ -10,6 +10,11 @@
 \usepackage{amsfonts}
 \usepackage[margin=0.5in,top=1in,bottom=1in]{geometry}
 
+\newenvironment{proof}{\paragraph{PROOF:}}{\hfill$\square$}
+
+\newtheorem{thm}{LEMMA}[section]
+\newtheorem{defn}[thm]{DEFINITION}
+
 \title{Lemmas for Integrals.}
 \author{Amlal El Mahrouss\\amlal@nekernel.org}
 \date{February 2026}
@@ -21,7 +26,11 @@
 	\rule[0.01cm]{17cm}{0.01cm}
 \end{center}
 
-\section{Definitions}
+\begin{abstract}
+    The paper covers several lemmas and definitions that we will define to help us connect the dots for series in analysis.
+\end{abstract}
+
+\section{DEFINITIONS}
 
 We assume that $u \in \mathbb{R}, \quad \forall u \in \mathbb{R} : u < \pi, \quad 0 < u$
 
@@ -30,6 +39,19 @@ We assume that $u \in \mathbb{R}, \quad \forall u \in \mathbb{R} : u < \pi, \qua
 \end{equation}
 Where $u, u_{0} > 0, \quad u, u_{0} \in \mathbb{R}$, such that $S : (u, \pi) \to \mathbb{R}$.
 
-\section{Lemmas}
+\section{LEMMAS}
+
+\subsection{FIRST LEMMA}
+
+\begin{defn}We assume the value $B_{0} \in \mathbb{R}, \quad \pi > B_{0} > 0$. \end{defn}
+\begin{thm}For all variables of $B \to B_{n}$ such that $0 < B_{n} < \pi$, the variable $B_{n}$ is defined in $I_{1}$.\end{thm}
+
+\begin{proof}
+We assume that:
+\begin{equation}
+    \lim_{B_{n} \to \infty} = B_{n} \to I_{1}, \quad
+\end{equation}
+If and only if: $B_{0} > 0, \quad B_{n} \in \mathbb{R}$.
+\end{proof}
 
 \end{document}
