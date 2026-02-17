@@ -27,29 +27,32 @@
 \end{center}
 
 \begin{abstract}
+\begin{center}
     The paper covers several lemmas and definitions that we will define to help us connect the dots for series in analysis.
+\end{center}
 \end{abstract}
 
 \section{DEFINITIONS}
 
-We assume that $u \in \mathbb{R}, \quad \forall u \in \mathbb{R} : u < \pi, \quad 0 < u$
+We assume that $u \in \mathbb{R}, \quad \forall u, \pi > u > 0$
 
 \begin{equation}
-	I_{1} \coloneqq \int_{u_{0}}^{u} S(t) dt, \quad t = u, \quad u > 0
+	I_{n} \coloneqq \int_{u_{n}}^{u} S(t) dt, \quad \forall n \geq 1, \quad n \in \mathbb{Z}
 \end{equation}
-Where $u, u_{0} > 0, \quad u, u_{0} \in \mathbb{R}$, such that $S : (u, \pi) \to \mathbb{R}$.
+Where $u, u_{0} > 0$ for $S : u \to \mathbb{R}$.
 
 \section{LEMMAS}
 
 \subsection{FIRST LEMMA}
 
-\begin{defn}We assume the value $B_{0} \in \mathbb{R}, \quad \pi > B_{0} > 0$. \end{defn}
+\begin{defn}We assume that $B_{0} \in \mathbb{R}, \quad \pi > B_{0} > 0$. \end{defn}
+\begin{defn}We assume $\forall n \geq 1, \quad n \in \mathbb{Z}$. \end{defn}
 \begin{thm}For all variables of $B \to B_{n}$ such that $0 < B_{n} < \pi$, the variable $B_{n}$ is defined in $I_{1}$.\end{thm}
 
 \begin{proof}
-We assume that:
+We assert that:
 \begin{equation}
-    \lim_{B_{n} \to \infty} = B_{n} \to I_{1}, \quad
+    \lim_{n \to +\infty} I(u) \coloneqq B_{n} \to I_{n}, \quad
 \end{equation}
 If and only if: $B_{0} > 0, \quad B_{n} \in \mathbb{R}$.
 \end{proof}
