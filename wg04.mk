@@ -6,8 +6,8 @@
 
 .PHONY: wg04
 wg04: clean
-	$(HTMLTEX) source/wg04/sketch-01.tex
-	$(PDFTEX) source/wg04/sketch-01.tex
+	$(HTMLTEX) source/wg04/paper.2.tex
+	$(PDFTEX) source/wg04/paper.2.tex
 	$(HTMLTEX) source/wg04/paper.tex
 	$(PDFTEX) source/wg04/paper.tex
 
