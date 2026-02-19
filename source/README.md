@@ -4,6 +4,8 @@
 
 ## Working Groups:
 
+The Working Groups are paper(s) owned by a group of persons in which they improve or work at.
+
 ### Active Working Groups:
 
 - WG01: `The PL/OS Group`.
