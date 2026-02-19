@@ -12,7 +12,3 @@
 - WG04: `The Mathematics Group`.
 - WG05: `The Execution Theory Group`.
 
-## Active Paper Groups:
-
-- DN001: `The Mathematics of Execution.`
-- DN002: `The C Index Property.`
