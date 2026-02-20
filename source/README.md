@@ -18,5 +18,5 @@ The Working Groups are paper(s) owned by a group of persons in which they improv
 
 Follow the resources pointed here by other maintainers:
 
-- [https://github.com/amlel-el-mahrouss/paper-notes](https://github.com/amlel-el-mahrouss/paper-notes) [https://github.com/amlel-el-mahrouss/](Amlal El Mahrouss)
+- [https://github.com/amlel-el-mahrouss/paper-notes](https://github.com/amlel-el-mahrouss/paper-notes) [https://github.com/amlel-el-mahrouss](Amlal El Mahrouss)
 
