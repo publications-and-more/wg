@@ -14,3 +14,9 @@ The Working Groups are paper(s) owned by a group of persons in which they improv
 - WG04: `The Mathematics Group`.
 - WG05: `The Execution Theory Group`.
 
+## External Resources:
+
+Follow the resources pointed here by other maintainers:
+
+- [https://github.com/amlel-el-mahrouss/paper-notes](https://github.com/amlel-el-mahrouss/paper-notes) [https://github.com/amlel-el-mahrouss/](Amlal El Mahrouss)
+
