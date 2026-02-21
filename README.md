@@ -1,6 +1,8 @@
-# Introduction:
+# NeKernel.org Papers
 
-This is the Working Group papers of NeKernel.
+## Abstract:
+
+This is the Working Group papers of NeKernel.org
 <br/>
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
@@ -23,4 +25,4 @@ git clone git@github.com:<your-username>/draft.git
 - Use `pdflatex` for PDF generation.
 - Use `Overleaf` to edit the LaTeX files.
 
-##### (c) 2025 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
+##### (c) 2025-2026 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
