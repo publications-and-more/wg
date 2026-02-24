@@ -34,25 +34,27 @@ The section covers definitions, and properties of the formulas we will use in th
 We assume $x, y, z \in \mathbb{R}, \quad n \in \mathbb{N}, \quad \cos(\pi) < a < b, \quad t = a$
 \subsection{DEFINITION OF THE A-INTEGRAL:}
 \begin{equation}
-    I_{1}(t, a, b, n) \coloneqq \sum_{k=t}^{n} \int_{a}^{b} S(u) du
+    I_{1}(t, a, b, n) \coloneqq \sum_{k=t}^{n} \int_{a}^{b} Z(u) du
 \end{equation}
 \subsection{DEFINITION OF THE A-FUNCTION:}
+Let a function be:
 \begin{equation}
-	S(x, u) : (x, u) \to \mathbb{R}
+	Z(x) : (0, x) \to \mathbb{R}
 \end{equation}
+Named $Z(x) \in \mathbb{R}$.
 \subsection{DEFINITION OF THE A-EQUATION:}
 \begin{equation}
-	I_{2}(y, z, a, b, \Delta t) \coloneqq \int_{a}^{b} (E_{1}(x, y, z, \Delta t))dx, \quad E_{1}(x, y, z, \Delta t) := \frac{S(x, y)}{S(\Delta t, z)}
+	I_{2}(y, z, t, a, b) \coloneqq \int_{a}^{b} E_{1}(x, y, z, t) dx, \quad E_{1}(x, y, z, t) := Z(x \cdot t, y \cdot z)
 \end{equation}
-Where $\Delta t \in \mathbb{R}$ if and only if $0 < \Delta t$.
+Where $t \in \mathbb{R}$ if and only if $0 < t$.
 \subsection{DEFINITION OF THE K-EQUATION:}
 \begin{equation}
-	K_{n}(u_{n}, a, b) \coloneqq \int_{a}^{b} S_{n}(u_{n}) \quad d \cdot u_{n}, \quad \forall u_{n}, S_{n}(u_{n}) \in \mathbb{R}
+	K_{n}(u_{n}, a, b) \coloneqq \int_{a}^{b} Z_{n}(u_{n} \cdot t) dt, \quad \forall u_{n}, Z_{n}(u_{n}) \in \mathbb{R}
 \end{equation}
-Where $K_{n} > 0$ and $S_{n}(u_{n})$ is an A-Function of index $n$ at $u$.
+Where $K_{n} > 0$ and $Z_{n}(u_{n})$ is an A-Function of index $n$ at $u$.
 
 \section{INTRODUCTION}
 
-We will in the paper, introduce several equations, and their usages in analysis.
+We will in this paper introduce several equations and their usages in analysis.
 
 \end{document}
