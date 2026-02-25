@@ -8,12 +8,14 @@ The Working Groups are paper(s) owned by a group of persons in which they improv
 
 ### Active Working Groups:
 
-- WG01: `The PL/OS Group`.
+- WG01: `The NeKernel Group`.
 - WG02: `The Systems Group`.
-- WG03: `The Nectar PL Group`.
+- WG03: `The Nectar Group`.
 - WG04: `The Mathematics Group`.
 - WG05: `The Execution Theory Group`.
 
 ## External Resources:
+
+We recommend these external notes to be read as well.
 
 - [https://github.com/amlel-el-mahrouss/paper-notes](https://github.com/amlel-el-mahrouss/paper-notes)
