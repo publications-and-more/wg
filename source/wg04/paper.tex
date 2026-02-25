@@ -18,31 +18,31 @@
 
 \maketitle
 
-\begin{center}
-	\rule[0.01cm]{17cm}{0.01cm}
-\end{center}
-
 \begin{abstract}
 \begin{center}
     The paper covers several definitions that are made to be used in analysis; their purpose has been kept abstract for flexibility reasons.
 \end{center}
 \end{abstract}
 
-\section{DEFINITIONS}
+\begin{center}
+	\rule[0.01cm]{17cm}{0.01cm}
+\end{center}
 
-The section covers definitions, and properties of the formulas we will use in this paper.
+\section{DEFINITION}
+
+We define the following formulas to establish our proofs:
 
 \subsection{DEFINITION OF THE A-INTEGRAL:}
 \begin{equation}
     I_{1}(t, a, b, n) \coloneqq \sum_{k=t}^{n} \int_{a}^{b} Z(u) du
 \end{equation}
 \subsection{DEFINITION OF THE A-FUNCTION:}
-Let a function be:
+Let a function which returns a value in $\mathbb{R}$ be:
 \begin{equation}
 	Z(x) : (0, x) \to \mathbb{R}
 \end{equation}
-Named $Z(x) \in \mathbb{R}$.
-\subsection{DEFINITION OF THE A-EQUATION:}
+Named $Z(x) \in \mathbb{R}$. Such that $Z(x)$ is a compute-function of argument $x$.
+\subsection{DEFINITION OF THE A-EQUATION AND I-INTEGRAL:}
 \begin{equation}
 	I_{2}(y, z, t, a, b) \coloneqq \int_{a}^{b} E_{1}(x, y, z, t) dx, \quad E_{1}(x, y, z, t) := Z(x \cdot t, y \cdot z)
 \end{equation}
@@ -55,6 +55,15 @@ Where $K_{n} > 0$ and $Z_{n}(u_{n})$ is an A-Function of index $n$ at $u$.
 
 \section{INTRODUCTION}
 
-We will in this paper introduce several equations and their usages in analysis.
+\section{LEMMAS}
+
+\subsection{LEMMA ONE: THE A-LEMMA:}
+
+\subsection{LEMMA TWO: THE K-LEMMA:}
+
+\section{CONCLUSION}
+
+\section{REFERENCES}
+
 
 \end{document}
