@@ -25,4 +25,4 @@ git clone git@github.com:<your-username>/draft.git
 - Use `pdflatex` for PDF generation.
 - Use `Overleaf` to edit the LaTeX files.
 
-##### (c) 2025-2026 Amlal El Mahrouss & NeKernel.org Authors, licensed under Apache 2.0.
+##### (c) 2025-2026 Amlal El Mahrouss & Ne.org Authors, licensed under Apache 2.0.
