@@ -125,7 +125,7 @@
 
 \title{%
   \vspace{-1.5em}%
-  \large\textbf{The 'Context Language' System.}%
+  \large\textbf{All you need is Integrals for Debugging.}%
 }
 
 \author{%
@@ -140,7 +140,7 @@
 
 %% ============================================================
 \begin{document}
-%% ============================================================
+
 
 \twocolumn[{%
   \maketitle
@@ -151,12 +151,13 @@
   \begin{minipage}{0.92\linewidth}
     \small
     \textbf{Abstract.}\enspace
-    This development presents a systems language[1] in which we'll name 'Context Language' (CL).
-    We propose a method of programming language design in which Execution is separated from Data, alongside trait rules.
+    This development presents an approach of software debugging[1] in which we'll name 'Integrals of Debuggging' (ID).
+    We propose a mathematical of which integrals are used to analyze, modify, and apply, software patches to programs.
 
+    
     \medskip
     \textbf{Keywords:}\enspace
-    Computer Science; Software Engineering;
+    Computer Science; Mathematics;
   \end{minipage}
   \end{center}
   \vspace{0.8em}
@@ -164,44 +165,25 @@
   \vspace{1em}
 }]
 
-%% ============================================================
 \section{Introduction}
-\label{sec:cl-introduction}
+\label{sec:cl-example-integrals}
 
-We propose the following approach to represent the CL execution flow, as execution context a way to mathematically present:
-\begin{equation}
-    \Theta(\operatorname{C}) \coloneqq\frac{d\operatorname{Prog}(\operatorname{\lambda C})}{d\operatorname{C}}
-\end{equation}
-Such that an execution context (denoted as $\operatorname{C}$) is a program currently running with rules (denoted as $\operatorname{Trait}(\operatorname{C})$) and domains. We derive the program by its context in this formula, as we depend on $\operatorname{C}$, the $\operatorname{C}$ variable must be valid and computable in a domain $\operatorname{D}$.
-
-\section{The CL Syntax}
-\label{sec:cl-syntax}
-
-The syntax of a Context Language may consist of traits, and implementations. The traits can be expressed as defined in Nectar. One way to represent it mathematically is:
+Let an integral of $\operatorname{LongReturn(x, t)}$ be:
 
 \begin{equation}
-    \operatorname{Trait}(\operatorname{C}) \coloneqq \operatorname{Rules}(\operatorname{C}) \in \operatorname{C}
+    \operatorname{LongReturn(x, t)} \coloneqq \int_{n}^{p} \operatorname{FastReturn(x, t)} \cdot d\operatorname{t}
 \end{equation}
-Traits and such must be valid in $\operatorname{C} \And$ $\Theta(\operatorname{C})$.
+Such that $x$ and $t$ are always greater or equal than one, $\operatorname{LongReturn(x, t)}$ shall always be greater than $\operatorname{FastReturn(x, t)}$ for all such value in $\mathbb{R}$.
+This introduction of the LongReturn, will let us jump to our next section about its applications in Computer Analysis.
 
-\section{Example: The Nectar 'CL'}
-\label{sec:cl-example-nectar}
+\section{Constraints}
 
-Developing such languages would benefit Software Engineering as we noticed a much faster cycle of software development when using the CL approach rather than the classic CL approach.
-\\\\\\\\
-\begin{lstlisting}
-extern palloc; // parallel alloc
+However before starting, we shall provide the following conditions:
+\begin{equation}
+    \operatorname{LongReturn(x)} \geq \operatorname{FastReturn(x)}, \quad \operatorname{x} \geq 1
+\end{equation}
+The variable x shall also be defined in $\mathbb{R}$ throughout the integral. We shall now proceed into the next section.
 
-const main() {
-  palloc(0, 0, 0);
-  return 0;
-}    
-\end{lstlisting}
-We also notice that Nectar programs tends to be shorter and more expressive than average.
-
-\section{Conclusion}
-\label{sec:cl-conclusion}
-
-We can conclude by theorizing that the CL could benefit software engineering by enabling secure systems and engineering, and making them much more accessible than we had previously. However more development will come after this development for additional reports on this approach.
+\section{Applications in Software Debugging}
 
 \end{document}
