@@ -10,7 +10,7 @@ identifiers:
   - type: url
     value: 'https://nekernel.org'
     description: NeKernel.org
-repository-code: 'https://github.com/nekernel-org/papers'
+repository-code: 'https://github.com/ne-foss-org/papers'
 url: 'https://nekernel.org'
 abstract: >-
   Working Group Papers of NeKernel.org, authored by Amlal El Mahrouss.

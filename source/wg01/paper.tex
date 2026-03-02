@@ -85,7 +85,7 @@ struct MemoryTree final {
     static constexpr bool is_file = false;
     /// ...
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h#L78-L105}{Link}. \\ Which is why the `constexpr' keyword is very powerful here for the Compile-Time Evaluation Domain, we avoid the many pitfalls of the Run-Time Evaluation Domain.
+\end{lstlisting} Source: \href{https://github.com/ne-foss-org/nekernel/blob/develop/src/kernel/KernelKit/CoreProcessScheduler.h#L78-L105}{Link}. \\ Which is why the `constexpr' keyword is very powerful here for the Compile-Time Evaluation Domain, we avoid the many pitfalls of the Run-Time Evaluation Domain.
 
 \subsection{III: Memory Layout and the example of C++.}
 {
@@ -128,7 +128,7 @@ template <class Driver>
 concept IsValidDriver = requires(Driver drv) {
 	{ drv.IsActive() && drv.Type() > kInvalidType };
 };
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{Link}.\\ Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
+\end{lstlisting} Source: \href{https://github.com/ne-foss-org/nekernel/blob/develop/src/libDDK/DriverKit/c%2B%2B/driver_base.h}{Link}.\\ Now, the problem with freestanding development is that such feature may be abused, and it is mitigated by following the TTPI.
 
 \subsection{IV: The Three Prongs on Inheritance.}
 
@@ -173,7 +173,7 @@ if constexpr (IsVettable<UnVettable>) {
 } else {
 	instVet->Abort();
 }
-\end{lstlisting} Source: \href{https://github.com/nekernel-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{Link}.
+\end{lstlisting} Source: \href{https://github.com/ne-foss-org/nekernel/blob/develop/src/kernel/NeKit/Vettable.h}{Link}.
 
 \section{VI: Conclusion}
 { Safe and correct development in a freestanding domain is indeed possible granted the above concepts are applied and respected.}
