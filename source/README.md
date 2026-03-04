@@ -13,6 +13,7 @@ The Working Groups are paper(s) owned by a group of persons in which they improv
 - WG03: `The Nectar Group`.
 - WG04: `The Mathematics Group`.
 - WG05: `The Execution Theory Group`.
+- WG06: `The Debugging Group`.
 
 ## External Resources:
 
