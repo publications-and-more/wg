@@ -1,4 +1,4 @@
-# Ne.org Papers
+# Ne.org Papers Collection.
 
 ## Abstract:
 
@@ -19,6 +19,7 @@ git clone git@github.com:<your-username>/papers.git
 - LiveTeX (htlatex, pdflatex)
 - Git
 - CoreUtils
+- Extra TeX packages, scientific, etc.
 
 ## Recommended Tools:
 
