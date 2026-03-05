@@ -1,8 +1,8 @@
-# NeKernel.org Papers
+# Ne.org Papers
 
 ## Abstract:
 
-This is the Working Group papers of NeKernel.org
+This is the Working Group papers of Ne.org
 <br/>
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
@@ -11,7 +11,7 @@ Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 Please fork and clone the repository first:
 
 ```sh
-git clone git@github.com:<your-username>/draft.git
+git clone git@github.com:<your-username>/papers.git
 ```
 
 ## Requirements:
