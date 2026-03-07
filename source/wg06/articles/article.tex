@@ -167,7 +167,7 @@
 
 \section{Introduction}
 
-Consider an open interval from $n$ to $p$ over a field $\mathbb{Code}$ which describes a program and its properties. What are the techniques in which we can analyze and audit its properties and behavior? We will try to impose a framework in this report.
+Consider an open interval from $n$ to $p$ over a field $\mathbb{K}$ which describes a program and its properties. What are the techniques in which we can analyze and audit its properties and behavior? We will try to impose a framework in this report.
 
 \section{Definition of the LongReturn(x, t) function}
 \label{sec:cl-example-integrals}
@@ -177,7 +177,7 @@ Let an integral of $\operatorname{LongReturn(x, t)}$[2] be defined where the val
 \begin{equation}
     \operatorname{LongReturn(x, t)} \coloneqq \int_{n}^{p} \operatorname{FastReturn(x, t)} \cdot d \operatorname{t}
 \end{equation}
-We assume that $x$ and $t$ are always greater or equal than one, $\operatorname{LongReturn(x, t)}$ shall always be greater than $\operatorname{FastReturn(x, t)}$ for all such value in $\mathbb{Code}$.
+We assume that $x$ and $t$ are always greater or equal than one, $\operatorname{LongReturn(x, t)}$ shall always be greater than $\operatorname{FastReturn(x, t)}$ for all such value in $\mathbb{K}$.
 This introduction of the LongReturn, will let us jump to our next section about its applications in Computer Analysis.
 
 \section{Constraints}
@@ -186,7 +186,7 @@ However before starting, we shall provide the following conditions from [2]:
 \begin{equation}
     \operatorname{LongReturn(x, t)} \geq \operatorname{FastReturn(x, t)}, \quad \operatorname{x} \geq 1
 \end{equation}
-The variable x shall also be defined in $\mathbb{Code}$ throughout the integral. We shall now proceed into the next section.
+The variable x shall also be defined in $\mathbb{K}$ throughout the integral. We shall now proceed into the next section.
 
 \section{Definition of the DerRet(x, t) function}
 
@@ -196,7 +196,7 @@ The following is the derivative of $\operatorname{LongReturn(x, t)}$, which equa
 \end{equation}
 Such that the following is assumed:
 \begin{equation}
-    \quad State, \operatorname{Travel(State)} \in \mathbb{Code}
+    \quad State, \operatorname{Travel(State)} \in \mathbb{K}
 \end{equation}
 Indeed, the function $\operatorname{Travel(State)}$ is equal to the program state at the variable $\operatorname{State}$ which represents the program's state.
 
