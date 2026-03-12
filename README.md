@@ -26,4 +26,9 @@ git clone git@github.com:<your-username>/papers.git
 - Use `pdflatex` for PDF generation.
 - Use `Overleaf` to edit the LaTeX files.
 
+## Paper links:
+
+- WG06: https://doi.org/10.5281/zenodo.18837133
+- WG03: https://doi.org/10.5281/zenodo.18837128
+
 ##### (c) 2025-2026 Amlal El Mahrouss & Ne.org Authors, licensed under Apache 2.0.
