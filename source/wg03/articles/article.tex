@@ -131,11 +131,10 @@
 \author{%
   \textbf{Amlal El Mahrouss}$^{1}$\thanks{Corresponding author. Email: amlal@nekernel.org}
   \\amlal@nekernel.org, amlalelmahrouss@icloud.com\\[0.4em]
-  \small $^{1}$Ne.org Journal
 }
 
 \date{%
-  \small 3 March 2026
+  \small 23 March 2026
 }
 
 %% ============================================================
@@ -150,13 +149,9 @@
   \begin{center}
   \begin{minipage}{0.92\linewidth}
     \small
-    \textbf{Abstract.}\enspace
-    This development presents a systems language[1] in which we'll name 'Context Language' (CL).
+    \textbf{ABSTRACT.}\enspace
+    This development presents a systems language[1] in which we'll name 'Nectar' (CL).
     We propose a method of programming language design in which Execution is separated from Data, alongside trait rules.
-
-    \medskip
-    \textbf{Keywords:}\enspace
-    Computer Science; Software Engineering;
   \end{minipage}
   \end{center}
   \vspace{0.8em}
@@ -165,17 +160,17 @@
 }]
 
 %% ============================================================
-\section{Introduction}
-\label{sec:cl-introduction}
+\section{APPROACH}
+\label{sec:cl-approach}
 
-We propose the following approach to represent the CL execution flow, as execution context a way to mathematically present:
+We represent the CL execution flow as an execution context as a way to mathematically present the following:
 \begin{equation}
-    \Theta(\operatorname{C}) \coloneqq\frac{d\operatorname{Prog}(\operatorname{\lambda C})}{d\operatorname{C}}
+  \operatorname{CL}(\operatorname{C}) \coloneqq\frac{d\operatorname{Prog}(\operatorname{\lambda C})}{d\operatorname{C}}
 \end{equation}
 Such that an execution context (denoted as $\operatorname{C}$) is a program currently running with rules (denoted as $\operatorname{Trait}(\operatorname{C})$) and domains. We derive the program by its context in this formula, as we depend on $\operatorname{C}$, the $\operatorname{C}$ variable must be valid and computable in a domain $\operatorname{D}$.
 
-\section{The CL Syntax}
-\label{sec:cl-syntax}
+\section{THEORY}
+\label{sec:cl-theory}
 
 The syntax of a Context Language may consist of traits, and implementations. The traits can be expressed as defined in Nectar. One way to represent it mathematically is:
 
@@ -183,25 +178,28 @@ The syntax of a Context Language may consist of traits, and implementations. The
     \operatorname{Trait}(\operatorname{C}) \coloneqq \operatorname{Rules}(\operatorname{C}) \in \operatorname{C}
 \end{equation}
 Traits and such must be valid in $\operatorname{C} \And$ $\Theta(\operatorname{C})$.
+Here's an example of a Nectar program calling a `get' method:
 
-\section{Example: The Nectar 'CL'}
-\label{sec:cl-example-nectar}
-
-Developing such languages would benefit Software Engineering as we noticed a much faster cycle of software development when using the CL approach rather than the classic CL approach.
-\\\\\\\\
 \begin{lstlisting}
-extern palloc; // parallel alloc
+trait data {
+  let get();
+}
+
+impl data : trait data {
+  let get(let self) {
+
+  }
+}
 
 const main() {
-  palloc(0, 0, 0);
+  let s := data{};
+  s.get();
   return 0;
 }    
 \end{lstlisting}
-We also notice that Nectar programs tends to be shorter and more expressive than average.
 
-\section{Conclusion}
-\label{sec:cl-conclusion}
-
-We can conclude by theorizing that the CL could benefit software engineering by enabling secure systems and engineering, and making them much more accessible than we had previously. However more development will come after this development for additional reports on this approach.
+\section{REFERENCES}
+\label{sec:cl-references}
+[1] Keays, Roger, and Andry Rakotonirainy. “Context-Oriented Programming.” Proceedings of the 3rd ACM International Workshop on Data Engineering for Wireless and Mobile Access [San Diego CA USA], 2003, pp. 9–16. DOI.org (Crossref), https://doi.org/10.1145/940923.940926.
 
 \end{document}
