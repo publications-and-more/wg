@@ -1,4 +1,4 @@
-# File: wg04.tex
+# File: wg04.mk
 # Author: Amlal El Mahrouss
 # Purpose: Generate HTML and PDF papers from LaTex documents.
 # (C) 2026 Amlal El Mahrouss.

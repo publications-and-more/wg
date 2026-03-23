@@ -1,4 +1,5 @@
 (*
+  SPDX-License-Identifier: Apache-2.0
   File: addpaper.ml
   Purpose: Creates a paper template in LaTeX.
   Copyright 2025-2026, Amlal El Mahrouss & NeKernel.org Authors.
@@ -57,3 +58,5 @@ let () = if Array.length Sys.argv >= 5 then
     printf "addpaper: Creates papers for TeX.\n";
     printf "addpaper: usage: <file_name> <document_title>\n"
   );;
+
+  

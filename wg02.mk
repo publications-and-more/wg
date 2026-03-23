@@ -1,4 +1,4 @@
-# File: wg02.tex
+# File: wg02.mk
 # Author: Amlal El Mahrouss
 # Purpose: Generate HTML and PDF papers from LaTex documents.
 # (C) 2025-2026 Amlal El Mahrouss.
