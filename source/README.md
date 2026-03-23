@@ -1,4 +1,4 @@
-# NeKernel.org Working Groups/DN Groups.
+# Ne.org Working Groups/Data Number/Task Number Groups.
 
 #### This README indexes the different working groups and their purpose.
 
@@ -17,6 +17,8 @@ The Working Groups are paper(s) owned by a group of persons in which they improv
 
 ## External Resources:
 
-We recommend these external notes to be read as well.
+We recommend these external notes from contributors as well.
 
-- [https://github.com/amlel-el-mahrouss/paper-notes](https://github.com/amlel-el-mahrouss/paper-notes)
+### Amlal El Mahrouss:
+
+- [https://github.com/amlel-el-mahrouss/notes-for-x](https://github.com/amlel-el-mahrouss/notes-for-x)
