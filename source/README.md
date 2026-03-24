@@ -21,4 +21,5 @@ We recommend these external notes from contributors as well.
 
 ### Amlal El Mahrouss:
 
-- [https://github.com/amlel-el-mahrouss/notes-for-x](https://github.com/amlel-el-mahrouss/notes-for-x)
+- [git@github.com:amlel-el-mahrouss/papers-and-slides.git](git@github.com:amlel-el-mahrouss/papers-and-slides.git)
+
