@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}                  % Bold math symbols
+
+%% ---- Figures & Tables -------------------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}            % Professional table rules
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\title{First Report on CL and Nectar.}
+\author{Amlal El Mahrouss\\amlal@nekernel.org}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction:}
+
+The Context Programming paradigm as introduced in our previous work[1] has evolved since, in this paper, which serves a second report of the previous one, we will note and comment on improvements and regressions.
+
+\section{A Reminder of Nectar's $\lambda$-Execution:}
+
+As previously stated, we can express execution as a mathematical function:
+
+\begin{equation}
+    \Theta(x) = \lambda x.(P(x))
+\end{equation}
+This function must have $x$ defined in a program set $\mathbb{P}$ in which it may not be contiguous.
+
+\section{The current implementation of Nectar:}
+
+The current implementation of Nectar allows the following syntax:
+
+\begin{lstlisting}
+#include <GenericsLibrary/std.nhh>
+
+const main()
+{
+	try {
+		pthread_exit();
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+In which this segment is completely separated from data. In order to access process data you would need a trait, such as $ThreadShared$ to retrieve the current thread information.
+ 
+\begin{lstlisting}
+#include <GenericsLibrary/std.nhh>
+
+const main()
+{
+	try {
+		let cur := ThreadShared->current_thread_;
+	    cur->exit();
+    }
+	
+	return 0;
+}
+\end{lstlisting}
+This could be represented logically as:
+\begin{equation}
+        \operatorname{Trait}(\operatorname{C}) \coloneqq \operatorname{Rules}(\operatorname{C}) \in \mathbb{P}
+\end{equation}
+Such traits shall be valid in $\operatorname{C} \And$ $\Theta(\operatorname{C})$. Notice that the definition has changed from $C$ to $\mathbb{P}$. It is to express trait without a circularity condition in between.
+
+\section{Examples of programs written in Nectar:}
+\subsection{A CUDA example in Nectar:}
+\begin{lstlisting}
+import cudaMalloc;
+
+const main()
+{
+    let ptr := 0;
+    let sz := 8;
+    cudaMalloc(ptr, sz);
+}
+\end{lstlisting}
+\subsection{A Checked resource example in Nectar:}
+\begin{lstlisting}
+#include <GenericsLibrary/std.nhh>
+
+const main()
+{
+	try {
+		terminate();
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\subsection{A simple program in Nectar:}
+\begin{lstlisting}
+extern exit;
+
+const main()
+{
+	let _ := exit(0);
+	if (_ === 0): {
+		return 0;
+	}
+	return 0;
+}
+\end{lstlisting}
+\section{Motivations of Nectar:}
+The paper effectively tries to address underlying issues when designing Computer Systems in data separation. That is separation data and text in a Von-Neumman architecture. Examples includes: Operating System Kernels, Program Compilers, Program Linkers.
+\section{Applications of Nectar:}
+Nectar applies to systems programming, specifically in unprivileged and privileged code ran Natively by an Instruction Set Architecture.
+\section{Conclusion:}
+The conclusion of this report, although short, is improvements in understanding how data gets separated from code, clearer formulas, and a better idea on where to head from now on.
+
+\end{document}
