@@ -1,4 +1,4 @@
-# Ne.org Working Groups/Data Number/Task Number Groups.
+# Ne.app Working Groups/Data Number/Task Number Groups.
 
 #### This README indexes the different working groups and their purpose.
 

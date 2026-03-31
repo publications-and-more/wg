@@ -2,7 +2,7 @@
 
 ## Abstract:
 
-This is the Working Group papers of Ne.org
+This is the Working Group papers of Ne.app
 <br/>
 Refer to [`CITATION.cff`](CITATION.cff) if you wish to cite these documents.
 
@@ -31,4 +31,4 @@ git clone git@github.com:<your-username>/papers.git
 - WG06: https://doi.org/10.5281/zenodo.18837133
 - WG03: https://doi.org/10.5281/zenodo.18837128
 
-##### (c) 2025-2026 Amlal El Mahrouss & Ne.org Authors, licensed under Apache 2.0.
+##### (c) 2025-2026 Amlal El Mahrouss & Ne.app Authors, licensed under Apache 2.0.
