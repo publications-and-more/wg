@@ -1,0 +1,185 @@
+%% ============================================================
+%% Academic Journal Paper Template
+%% Compatible with: IEEE, ACM, Elsevier, Springer conventions
+%% ============================================================
+
+\documentclass[10pt, twocolumn]{article}
+
+%% ---- Core Packages ----------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{lettrine}
+\usepackage{microtype}           % Microtypographic refinements
+
+%% ---- Page Geometry ----------------------------------------
+\usepackage[
+  top=1in, bottom=1in,
+  left=0.75in, right=0.75in,
+  columnsep=0.25in
+]{geometry}
+
+%% ---- Mathematics ------------------------------------------
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}                  % Bold math symbols
+
+%% ---- Figures & Tables -------------------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}            % Professional table rules
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+%% ---- Algorithms -------------------------------------------
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+
+%% ---- Code Listings ----------------------------------------
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{codestyle}{
+  backgroundcolor=\color{gray!8},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green!50!black},
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{orange!70!black},
+  numberstyle=\tiny\color{gray},
+  numbers=left,
+  numbersep=5pt,
+  showstringspaces=false,
+  frame=single,
+  rulecolor=\color{gray!40},
+  tabsize=2
+}
+\lstset{style=codestyle}
+
+%% ---- Hyperlinks -------------------------------------------
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=green!50!black,
+  urlcolor=blue!60!black
+]{hyperref}
+\usepackage{url}
+
+%% ---- Bibliography -----------------------------------------
+\usepackage[numbers, sort&compress]{natbib}
+
+%% ---- Miscellaneous ----------------------------------------
+\usepackage{lipsum}              % Lorem ipsum filler — remove in production
+\usepackage{enumitem}
+\usepackage{siunitx}             % SI units: \SI{3.14}{\mega\hertz}
+\usepackage{cleveref}            % Smart cross-references: \cref{fig:foo}
+
+%% ---- Theorem Environments ---------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ---- Custom Commands --------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\inner}[2]{\left\langle #1,\, #2 \right\rangle}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\etal}{\textit{et al.}\xspace}
+
+%% ---- Caption Formatting -----------------------------------
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  format=hang,
+  justification=justified
+}
+
+%% ---- Header / Footer --------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Ne.app, Vol.~2, No.~1, March 2026}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%% ============================================================
+%%  FRONT MATTER
+%%  ============================================================
+
+\title{%
+  \vspace{-1.5em}%
+  \large\textbf{A CONCEPT OF OPERATION CODES FOR FINITE STATE MACHINES.}%
+}
+
+\author{%
+  \textbf{Amlal El Mahrouss}$^{1}$\thanks{Corresponding author. Email: amlal@ne-app.eu}
+  \\amlal@ne-app.eu
+}
+
+\date{%
+  \small 2 April 2026, Ne.app
+}
+
+%% ============================================================
+\begin{document}
+%% ============================================================
+
+\twocolumn[{%
+  \maketitle
+  \vspace{-0.5em}
+  \rule{\linewidth}{0.4pt}
+  \vspace{1em}
+}]
+
+\section{INTRODUCTION}
+\lettrine[lines=1,loversize=-.4]{T}{HE} recent development of software development makes one push back and think, how could one party audit and report on vulnerable part of a finite state machine operation codes?
+
+\subsection{THE MEASURE FUNCTION}
+
+To measure a function, the following $\operatorname{Measure}(program\_counter, limit)$ describes a measurement of a finite state machine program from $program\_counter$ to its $limit$ variable. Assuming a linear execution pathway, we get the following theorem that for such Measurement, each program from which we know, program counter, operation codes, and limit, there is a possibility of audit-ability. Let's define `audit-ability' as the ability to measure operation codes from program counter to limit.
+
+\section{ENCODING OPERATION CODES}
+
+\lettrine[lines=1,loversize=-.4]{E}{NCODING} operation codes would be consisting taking from a set $S_{opcode}$ in index $n$ to execute $t$ operation a finite state machine $\operatorname{fsm}(S_{opcode}, start)$. 
+
+\subsection{AN ENCODING TO REPRESENT A CURRENT MACHINE STATE.}
+
+\lettrine[lines=1,loversize=-.4]{C}{ONSIDER} the following 
+
+\begin{equation}
+    \operatorname{Box}(fsm) \coloneqq \int_{start}^{end} fsm(t) \space dt
+\end{equation}
+
+Define a box as a set of encoded instructions written in a linear purpose, thus $fsm$ shall be linear and defined in between $start$ and $end$.
+
+\section{COMMINATORY STATE MACHINES}
+
+Now the Box could be combined to guarantee time-traveled computation, in a fashion that the program counter $t$ is never ahead of a master state machine, which in that case is the lead finite state machine of a set of state machines of length $n$.
+
+\subsection{AN EXAMPLE OF MACHINE}
+
+\lettrine[lines=1,loversize=-.4]{P}{ICTURE} a set of state machines as dimensions of a computable set of numbers, where any operations defined by traits in that set is authorized, however unauthorized operations would be rejected by each FSM and halted by the MSM.
+
+\section{CONCLUSION}
+
+\lettrine[lines=1,loversize=-.4]{C}{ONCLUDING} the paper would be by generalizing FSM with concepts, orchestration, and traits, we could theorize further on concepts where such needs would be appreciated for a better understanding of a concept or problem. 
+
+\end{document}
