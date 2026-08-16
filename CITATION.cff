@@ -1,19 +1,19 @@
 cff-version: 1.2.0
-title: NeKernel.org Working Group Papers.
-message: The NeKernel.org Working Group papers.
+title: Ne.app Working Group Papers.
+message: The Ne.app Working Group papers.
 type: collection
 authors:
   - given-names: Amlal
     family-names: El Mahrouss
-    email: amlal@nekernel.org
+    email: amlal@ne-app.eu
 identifiers:
   - type: url
     value: 'https://nekernel.org'
-    description: NeKernel.org
+    description: Ne.app
 repository-code: 'https://github.com/ne-foss-org/papers'
 url: 'https://nekernel.org'
 abstract: >-
-  Working Group Papers of NeKernel.org, authored by Amlal El Mahrouss.
+  Working Group Papers of Ne.app, authored by Amlal El Mahrouss.
 keywords:
   - cs
   - systems

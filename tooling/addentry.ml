@@ -1,7 +1,7 @@
 (*
   File: addentry.ml
   Purpose: Creates a makefile rule.
-  Copyright 2026, Amlal El Mahrouss & NeKernel.org Authors.
+  Copyright 2026, Amlal El Mahrouss & Ne.app Authors.
   Licensed under Apache 2.0.
 *)
 

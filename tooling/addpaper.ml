@@ -2,7 +2,7 @@
   SPDX-License-Identifier: Apache-2.0
   File: addpaper.ml
   Purpose: Creates a paper template in LaTeX.
-  Copyright 2025-2026, Amlal El Mahrouss & NeKernel.org Authors.
+  Copyright 2025-2026, Amlal El Mahrouss & Ne.app Authors.
   Licensed under Apache 2.0.
 *)
 
